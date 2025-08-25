@@ -1,13 +1,19 @@
 
-# MGMT Overview Presentations
+# MGMT 457 W: Strategic Management of Innovation and Technology
 
-This repository contains slide decks for management overviews, built for presentation on GitHub Pages.
-
+This repository contains slide decks for MGMT 457 W: Strategic Management of Innovation and Technology
 ## Available Presentations
 
-*   **[Management Overview](./slides_overview/Overview.html)**
-    *   A general overview of management principles.
+*   **[Course Overview](./slides_overview/Overview.html)**
 
-*   **[Technical Complement](./slides_techcomplement/)**
-    *   A technical deep-dive to complement the main overview.
 
+*   **[Technology Lifecycle](./slides_techcomplement/Complement.html)**
+
+
+*   **[Technology Lifecycle Simulation](./slides_techcomplement/Simulation.html)**
+
+
+
+## In-class Simulation
+
+*   **[Simulation](https://bcs.statherian.com)**
