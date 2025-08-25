@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+
+		<!-- Font Awesome for icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Slide 1: Sample Presentation -->
+				<section data-background-image="img/pennstate.jpg" data-background-position="top right" data-background-opacity="0.5">
+					<h3>MGMT 457 W: Strategic Management of Innovation and Technology</h3>
+					<h4>Fall 2025</h4>
+					<h4>Kate Wang</h4>
+				</section>
+
+				<!-- Slide 2: Speaker notes and Lists -->
+				<section>
+					<h2>Let's Warm Up: About Me</h2>
+					<ul>
+						<li>Engineer and math background</li>
+						<li>6 years in Los Angeles researching technologies and entrepreneurship</li>
+						<li>Coach for Nittany AI challenges (e.g., Bytehealth)</li>
+					</ul>
+					<aside class="notes">
+						Speaker Notes. Can have multiple on a slide.
+					</aside>
+				</section>
+
+				<!-- Slide 3: Speaker notes and images -->
+				<section>
+					<h2>Your Turn</h2>
+					<ul>
+						<li>What do you prefer to be called?</li>
+						<li>Where are you from?</li>
+						<li>What is your major?</li>
+
+				
+					<aside class="notes">
+						Can also do a multiline comment that will show in notes.
+					</aside>
+				</section>
+
+				<!-- Slide 4: Centered images -->
+				<section>
+					<h2>4. Centered images</h2>
+					<p>You can center images</p>
+					<img class="r-stretch" src="https://picsum.photos/800/600" alt="Centered Image">
+				</section>
+
+				<!-- Slide 5: Quote -->
+				<section>
+					<h2>5. Slide 4</h2>
+					<blockquote>This is a quote.</blockquote>
+				</section>
+
+				<!-- Slide 6: Tables -->
+				<section>
+					<h2>6. Tables</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Column 1</th>
+								<th>Column 2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Item 1</td>
+								<td>Item 2</td>
+							</tr>
+							<tr>
+								<td>Item 3</td>
+								<td>Item 4</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<!-- Slide 7: Columns -->
+				<section data-background-image="https://picsum.photos/800/600?image=53" data-background-opacity="0.5">
+					<h2>7. Columns</h2>
+					<div style="display: flex; justify-content: space-around;">
+						<div style="flex: 1; padding: 10px;">
+							<h3>Left</h3>
+							<ul>
+								<li>1</li>
+								<li>2</li>
+							</ul>
+						</div>
+						<div style="flex: 1; padding: 10px;">
+							<h3>Right</h3>
+							<ul>
+								<li>3</li>
+								<li>4</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<!-- Slide 8: Icons -->
+				<section>
+					<h2>8. Icons</h2>
+					<p><i class="fa-brands fa-twitter"></i> Twitter</p>
+					<p><i class="fa-brands fa-mastodon"></i> Mastodon</p>
+					<p><i class="fa-brands fa-linkedin"></i> LinkedIn</p>
+					<p><i class="fa fa-window-maximize"></i> Blog</p>
+					<p><i class="fa-brands fa-github"></i> GitHub</p>
+				</section>
+
+				<!-- Slide 9: Large Text -->
+				<section>
+					<h1 class="r-fit-text">9. Large Text</h1>
+				</section>
+
+				<!-- Slide 10: Mermaid -->
+				<section>
+					<h2>10. Mermaid</h2>
+					<div class="mermaid">
+						graph TD;
+						    A-->B;
+						    A-->C;
+						    B-->D;
+						    C-->D;
+					</div>
+				</section>
+
+
+
+				
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
