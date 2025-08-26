@@ -17,3 +17,9 @@ This repository contains slide decks for MGMT 457 W: Strategic Management of Inn
 ## In-class Simulation
 
 *   **[Simulation](https://bcs.statherian.com)**
+
+## AI Writing
+
+* Promp Engineering
+* Deep Study
+* Consistency Checking
