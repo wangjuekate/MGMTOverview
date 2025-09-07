@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Value Chain Simulation</title>
+		<title>Value Chain Simulation: The RealReal</title>
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
@@ -16,44 +16,79 @@
 		<!-- Font Awesome for icons -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 		
-		<!-- Custom styles for better presentation fonts -->
 		<style>
+			.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+				text-transform: none;
+			}
+			.reveal .question-slide ul {
+				list-style-type: none;
+				padding-left: 0;
+			}
+			.reveal .question-slide li {
+				margin-bottom: 20px;
+				font-size: 0.8em;
+			}
+			.reveal .info-slide {
+				background-color: #f0f0f0;
+				padding: 20px;
+				border-radius: 10px;
+			}
 			.reveal h1 {
-				font-size: 2.5em;
+				font-size: 1em;
 				font-weight: 700;
 				line-height: 1.1;
 				margin-bottom: 0.3em;
 			}
 			.reveal h2 {
-				font-size: 2.2em;
+				font-size: 1em;
 				font-weight: 600;
 				line-height: 1.1;
 				margin-bottom: 0.4em;
 			}
 			.reveal h3 {
-				font-size: 1.6em;
+				font-size: 1em;
 				font-weight: 500;
 				line-height: 1.2;
 				margin-bottom: 0.3em;
 			}
 			.reveal h4 {
-				font-size: 1.3em;
+				font-size: 	1em;
 				font-weight: 500;
 				line-height: 1.2;
 				margin-bottom: 0.2em;
 			}
 			.reveal p {
-				font-size: 1.1em;
+				font-size: 0.5em;
 				line-height: 1.3;
 				margin-bottom: 0.5em;
 			}
 			.reveal ul li {
-				font-size: 1.0em;
+				font-size: 0.5em;
 				line-height: 1.4;
 				margin-bottom: 0.3em;
 			}
+			.reveal .title-slide h2 {
+				font-size: 1em;
+				font-weight: 700;
+			}
+			.reveal .title-slide h4 {
+				font-size: 1em;
+				font-weight: 400;
+			}
+			.reveal .large-text {
+				font-size: 1em;
+				line-height: 1.3;
+			}
+			.reveal .emphasis {
+				font-size: 1em;
+				font-weight: 600;
+			}
 			.reveal .slides section {
 				padding: 20px;
+			}
+			.reveal .slides section .content-container {
+				max-height: 80vh;
+				overflow: hidden;
 			}
 		</style>
 
@@ -62,16 +97,124 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- Slide 1: Title Slide -->
-				<section data-background-image="img/pennstate.jpg" data-background-position="top right" data-background-opacity="0.5">
-					<h2>Value Chain Simulation</h2>
-					<h4>Kate Wang</h4>
-					<h4>Penn State University</h4>
+				<section>
+					<h2>Simulation: The RealReal 2022 Turnaround</h2>
+					<p>Applying Value Chain Analysis to a real-world business challenge.</p>
 				</section>
 
-				<!-- Slide 2: Simulation Overview -->
+				<!-- CEO Slides -->
 				<section>
-					<h2>Simulation Overview</h2>
-					<p>Interactive analysis of value chain optimization strategies</p>
+					<h2>Role: CEO</h2>
+					<h4>What is next year’s strategy to help The RealReal improve its balance sheet?</h4>
+				</section>
+				<section>
+					<h2>CEO Information</h2>
+					<div class="info-slide">
+						<p>We offer a wide selection of authenticated, pre-owned luxury goods. A strong network effect drives our growth. We operate an online marketplace and retail stores. Major revenue lines are women’s fashion, jewelry/watches, and retail stores.</p>
+					</div>
+				</section>
+
+				<!-- CTO Slides -->
+				<section class="question-slide">
+					<h2>Role: CTO</h2>
+					<h4>What is the technological strategy for The RealReal next year?</h4>
+					<ul>
+						<li>A: Hire engineers to improve the UI of the website.</li>
+						<li>B: Hire engineers to improve the matching algorithm of the website.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>CTO Information & Answer</h2>
+					<div class="info-slide">
+						<p>Each item is a unique single-SKU. We use proprietary tech to optimize inbound processes (authentication, copywriting, photography). We are increasingly using tech to automate pricing, copywriting, and photo retouching. Online matching is more important than offline selling.</p>
+					</div>
+					<p style="margin-top: 20px;"><strong>Answer: B</strong> - Improving the matching algorithm is a core technology challenge that directly impacts the efficiency of the marketplace.</p>
+				</section>
+
+				<!-- COO Slides -->
+				<section class="question-slide">
+					<h2>Role: COO</h2>
+					<h4>How will The RealReal improve its operations?</h4>
+					<ul>
+						<li>A: The RealReal should reduce its inventory.</li>
+						<li>B: The RealReal should partner with more luxury brands.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>COO Information & Answer</h2>
+					<div class="info-slide">
+						<p>By making consignment easy, convenient, reliable, and fast, we unlock a vast quantity of goods. 83% of GMV is from repeat consignors. We provide an end-to-end service. Cost for authentication and inventory can be high and can be cut by reducing physical stores and inventory.</p>
+					</div>
+					<p style="margin-top: 20px;"><strong>Answer: A</strong> - Reducing inventory directly addresses a major cost center in the value chain.</p>
+				</section>
+
+				<!-- CMO Slides -->
+				<section class="question-slide">
+					<h2>Role: CMO</h2>
+					<h4>The RealReal should adopt market strategy as follows:</h4>
+					<ul>
+						<li>A: The RealReal should include more social media in their marketing strategies.</li>
+						<li>B: The RealReal should host more local campaigns in their marketing strategies.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>CMO Information & Answer</h2>
+					<div class="info-slide">
+						<p>We build trust through our authentication process. We have partnerships with brands like Stella McCartney and Jimmy Choo. Our business is mostly online, not in local stores, so social media marketing is more economically efficient.</p>
+					</div>
+					<p style="margin-top: 20px;"><strong>Answer: A</strong> - Social media is more efficient for a primarily online marketplace.</p>
+				</section>
+
+				<!-- CFO Slides -->
+				<section class="question-slide">
+					<h2>Role: CFO</h2>
+					<h4>What is the financial strategy for The RealReal next year?</h4>
+					<ul>
+						<li>A: The RealReal should increase their consignor commission.</li>
+						<li>B: The RealReal should increase their sales price.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>CFO Information & Answer</h2>
+					<div class="info-slide">
+						<p>GMV (Gross Merchandise Value) is increasing faster than NMV (Net Merchandise Value), indicating that costs should be cut. Consignment revenue is growing faster than direct revenue, suggesting a focus on consigning commission fees.</p>
+					</div>
+					<p style="margin-top: 20px;"><strong>Answer: A</strong> - Increasing consignor commission is a direct way to improve profitability, as indicated by the GMV vs. NMV trend.</p>
+				</section>
+
+				<!-- CHRO Slides -->
+				<section class="question-slide">
+					<h2>Role: CHRO</h2>
+					<h4>What is the hiring strategy for The RealReal next year?</h4>
+					<ul>
+						<li>A: The RealReal should increase investing in DEI program.</li>
+						<li>B: The RealReal should decrease investing in DEI program.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>CHRO Information & Answer</h2>
+					<div class="info-slide">
+						<p>We aspire to be designers of an equitable future through our four-pillar strategy: People, Culture, Commerce and Community. Our six Employee Resource Groups (“ERGs”) have continued to grow and evolve. Luxury brands seek identity and community; the DEI program helps maintain such a community.</p>
+					</div>
+					<p style="margin-top: 20px;"><strong>Answer: A</strong> - Investing in DEI helps build the community that is essential for a luxury brand.</p>
+				</section>
+
+				<!-- Key Takeaways -->
+				<section>
+					<h2>Key Takeaways: The RealReal Turnaround</h2>
+					<div style="text-align: left; margin: 30px 0;">
+						<h3>Value Chain in Action:</h3>
+						<ul>
+							<li><strong>Operations (COO):</strong> Reduce costs in a core primary activity by cutting inventory.</li>
+							<li><strong>Technology (CTO):</strong> Invest in the matching algorithm, a key technology development activity.</li>
+							<li><strong>Marketing (CMO):</strong> Focus on efficient, scalable marketing (social media) that fits the online model.</li>
+							<li><strong>Finance (CFO):</strong> Adjust the commission structure, a critical component of the firm's infrastructure and revenue model.</li>
+							<li><strong>HR (CHRO):</strong> Invest in culture (DEI) to support the brand's identity.</li>
+						</ul>
+						<p class="emphasis" style="text-align: center;">
+							<strong>A successful turnaround requires targeted interventions across the entire value chain.</strong>
+						</p>
+					</div>
 				</section>
 
 			</div>
@@ -81,10 +224,16 @@
 		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/mermaid/mermaid.js"></script>
 		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
 				slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>

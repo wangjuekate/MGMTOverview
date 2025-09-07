@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Platform Simulation</title>
+		<title>Platform Simulation: Amazon 2002</title>
 
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
@@ -16,44 +16,79 @@
 		<!-- Font Awesome for icons -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 		
-		<!-- Custom styles for better presentation fonts -->
 		<style>
+			.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+				text-transform: none;
+			}
+			.reveal .question-slide ul {
+				list-style-type: none;
+				padding-left: 0;
+			}
+			.reveal .question-slide li {
+				margin-bottom: 20px;
+				font-size: 0.8em;
+			}
+			.reveal .info-slide {
+				background-color: #f0f0f0;
+				padding: 20px;
+				border-radius: 10px;
+			}
 			.reveal h1 {
-				font-size: 2.5em;
+				font-size: 1em;
 				font-weight: 700;
 				line-height: 1.1;
 				margin-bottom: 0.3em;
 			}
 			.reveal h2 {
-				font-size: 2.2em;
+				font-size: 1em;
 				font-weight: 600;
 				line-height: 1.1;
 				margin-bottom: 0.4em;
 			}
 			.reveal h3 {
-				font-size: 1.6em;
+				font-size: 1em;
 				font-weight: 500;
 				line-height: 1.2;
 				margin-bottom: 0.3em;
 			}
 			.reveal h4 {
-				font-size: 1.3em;
+				font-size: 	1em;
 				font-weight: 500;
 				line-height: 1.2;
 				margin-bottom: 0.2em;
 			}
 			.reveal p {
-				font-size: 1.1em;
+				font-size: 0.5em;
 				line-height: 1.3;
 				margin-bottom: 0.5em;
 			}
 			.reveal ul li {
-				font-size: 1.0em;
+				font-size: 0.5em;
 				line-height: 1.4;
 				margin-bottom: 0.3em;
 			}
+			.reveal .title-slide h2 {
+				font-size: 1em;
+				font-weight: 700;
+			}
+			.reveal .title-slide h4 {
+				font-size: 1em;
+				font-weight: 400;
+			}
+			.reveal .large-text {
+				font-size: 1em;
+				line-height: 1.3;
+			}
+			.reveal .emphasis {
+				font-size: 1em;
+				font-weight: 600;
+			}
 			.reveal .slides section {
 				padding: 20px;
+			}
+			.reveal .slides section .content-container {
+				max-height: 80vh;
+				overflow: hidden;
 			}
 		</style>
 
@@ -62,18 +97,128 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- Slide 1: Title Slide -->
-				<section data-background-image="img/pennstate.jpg" data-background-position="top right" data-background-opacity="0.5">
-					<h2>Platform Simulation</h2>
-					<h4>Kate Wang</h4>
-					<h4>Penn State University</h4>
-				</section>
-
-				<!-- Slide 2: Simulation Overview -->
 				<section>
-					<h2>Simulation Overview</h2>
-					<p>Interactive analysis of platform strategy and ecosystem development</p>
+					<h2>Simulation: Amazon Integrating API in 2002</h2>
+					<img src="../slides_platform/img/amazon.png" alt="Amazon Logo" style="max-width: 50%; height: auto; margin-top: 20px;">
 				</section>
 
+				<!-- CEO Slides -->
+				<section>
+					<h2>Role: CEO</h2>
+					<h4>Should Amazon develop its API services? If so, how?</h4>
+				</section>
+				<section>
+					<h2>CEO Information</h2>
+					<ul>
+						<li>We and our sellers list millions of unique new, used and collectible items.</li>
+						<li>We also own and operate the Internet Movie Database (IMDb).</li>
+						<li>We offer e-commerce services to other businesses through our Merchant.com and Syndicated Stores programs.</li>
+					</ul>
+					<p>Your task is to get input from your executive team to make a decision.</p>
+				</section>
+
+				<!-- CTO Slides -->
+				<section class="question-slide">
+					<h2>Role: CTO</h2>
+					<h4>What is Amazon's technological strategy for next year?</h4>
+					<ul>
+						<li>A: Amazon should focus on developing API for their merchants.</li>
+						<li>B: Amazon should focus on developing API for their consumers.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>CTO Information & Answer</h2>
+					<div class="info-slide">
+						<p>Our current strategy is to focus our development efforts on creating and enhancing the specialized, proprietary software that is unique to our business and to license or acquire commercially-developed technology for other applications where available and appropriate. Commissions received through our Amazon Marketplace and Merchants@ programs are recorded as net amounts since we are acting as an agent.</p>
+					</div>
+					<p style="margin-top: 20px;"><strong>Answer: A</strong> - Focus on developing API for merchants to build on our platform.</p>
+				</section>
+
+				<!-- CMO Slides -->
+				<section class="question-slide">
+					<h2>Role: CMO</h2>
+					<h4>Amazon should adopt a market strategy as follows:</h4>
+					<ul>
+						<li>A: Amazon should advertise more to consumers about their amazon.com shopping.</li>
+						<li>B: Amazon should advertise more to merchants about their API services.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>CMO Information & Answer</h2>
+					<div class="info-slide">
+						<p>Our best marketing efforts are focused on improving the customer experience, which drives word-of-mouth promotion and repeat customer visits. Our business is generally affected by both seasonal fluctuations in Internet usage (which generally declines during summer months) and traditional retail seasonality.</p>
+					</div>
+					<p style="margin-top: 20px;"><strong>Answer: B</strong> - Advertise more to merchants about their API services.</p>
+				</section>
+
+				<!-- COO Slides -->
+				<section class="question-slide">
+					<h2>Role: COO</h2>
+					<h4>Which segment should Amazon integrate API services into?</h4>
+					<ul>
+						<li>A: Integrate in BMVD Segment and International Segment.</li>
+						<li>B: Integrate in ETK Segment and Services Segment.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>COO Information & Answer</h2>
+					<div class="info-slide">
+						<p>Our segments include: retail sales from www.amazon.com and www.amazon.ca of books, music and DVD/video products (BMVD); retail sales of electronics, home improvement and home and garden products (ETK); all retail sales of our internationally-focused Web sites; and commissions and fees from our services business.</p>
+					</div>
+					<p style="margin-top: 20px;"><strong>Answer: B</strong> - Integrate in ETK Segment and Services Segment.</p>
+				</section>
+
+				<!-- CFO Slides -->
+				<section class="question-slide">
+					<h2>Role: CFO</h2>
+					<h4>What financial strategies should Amazon take?</h4>
+					<ul>
+						<li>A: Amazon should allocate more funding to the BMVD Segment and International Segment.</li>
+						<li>B: Amazon should allocate more funding to the ETK Segment and Services Segment.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>CFO Information & Answer</h2>
+					<div class="info-slide">
+						<p>Our BMVD segment had net sales of $1.87 billion in 2002. Our International segment had net sales of $1.17 billion. Our ETK segment had net sales of $645 million. Our results from operations were income of $64 million in 2002, compared to losses in prior years.</p>
+					</div>
+					<p style="margin-top: 20px;"><strong>Answer: B</strong> - Allocate more funding to the ETK Segment and Services Segment.</p>
+				</section>
+
+				<!-- CHRO Slides -->
+				<section class="question-slide">
+					<h2>Role: CHRO</h2>
+					<h4>What is Amazon's hiring strategy for next year?</h4>
+					<ul>
+						<li>A: Amazon should provide more salary payments to employees.</li>
+						<li>B: Amazon should provide more stock options to employees.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>CHRO Information & Answer</h2>
+					<div class="info-slide">
+						<p>We need to train and manage our employee base. Our migration to a technology platform that utilizes a less-costly technology infrastructure has improved expense management. Our current and planned personnel may not be adequate to support future operations.</p>
+					</div>
+					<p style="margin-top: 20px;"><strong>Answer: B</strong> - Amazon should provide more stock options to employees.</p>
+				</section>
+
+				<!-- Key Takeaways -->
+				<section>
+					<h2>Key Takeaways: Amazon's Platform Strategy</h2>
+					<div style="text-align: left; margin: 30px 0;">
+						<h3>Strategic Alignment is Crucial:</h3>
+						<ul>
+							<li><strong>Technology (CTO):</strong> The decision to build APIs for merchants was foundational to creating a platform.</li>
+							<li><strong>Marketing (CMO):</strong> Shifting focus to attracting merchants was key to building the supply side of the platform.</li>
+							<li><strong>Operations (COO):</strong> Targeting the right segments (ETK, Services) for API integration maximized impact.</li>
+							<li><strong>Finance (CFO):</strong> Allocating capital to support the new platform strategy was essential for its success.</li>
+							<li><strong>HR (CHRO):</strong> Using stock options aligned employee incentives with the long-term vision.</li>
+						</ul>
+						<p class="emphasis" style="text-align: center;">
+							<strong>A successful platform strategy requires a coordinated effort across all functions of the organization.</strong>
+						</p>
+					</div>
+				</section>
 			</div>
 		</div>
 
@@ -81,10 +226,16 @@
 		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/mermaid/mermaid.js"></script>
 		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
 				slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
