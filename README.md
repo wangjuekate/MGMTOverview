@@ -8,6 +8,7 @@ This repository contains slide decks for MGMT 457 W: Strategic Management of Inn
 *   **[Course Overview](./slides_overview/Overview.html)**
 
 *   **[Technology S Curve](./slides_techcomplement/TechnologyScurve.html)**
+*   **[Technology S Curve Simulation](./slides_techcomplement/TechnologyScurveSimulation.html)**
 
 *   **[Dominant Design](./slides_dominantdesign/img/DominantDesignslides.html)**
 *   **[Dominant Design Simulation](./slides_dominantdesign/img/DominantDesign_simulation.html)**
