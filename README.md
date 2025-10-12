@@ -41,6 +41,6 @@ This repository contains slide decks for MGMT 457 W: Strategic Management of Inn
 
 ## AI Writing
 
-* Promp Engineering
-* Deep Study
-* Consistency Checking
+*   **[Complement-oriented Innovation](./Complement-oriented/BottleNeckPresentation.html)**
+*   **[Trascendent Framing](./TrascendentFraming/TrascendentFraming.html)**
+
