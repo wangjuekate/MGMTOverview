@@ -19,28 +19,33 @@ This repository contains slide decks for MGMT 457 W: Strategic Management of Inn
 *   **[Entry Timing](./slides_entrytiming/EntryTiming.html)**
 *   **[Entry Timing Simulation](./slides_entrytiming/EntryTimingSimulation.html)**
 
-*   **[Business Model](./slides_businessmodel/BusinessModel.html)**
-*   **[Business Model Simulation](./slides_businessmodel/BusinessModelSimulation.html)**
-
-*   **[Collaboration](./slides_collaboration/Collaboration.html)**
-*   **[Collaboration Simulation](./slides_collaboration/CollaborationSimulation.html)**
+Reporting Response Rate:[Midsemester SEEQ](https://www.srte.psu.edu/)
 
 *   **[Competition Analyses](./slides_competitionanalyses/CompetitionAnalyses.html)**
 *   **[Competition Analyses Simulation](./slides_competitionanalyses/CompetitionAnalysesSimulation.html)**
 
-*   **[Evaluation](./slides_evaluation/Evaluation.html)**
-*   **[Evaluation Simulation](./slides_evaluation/EvaluationSimulation.html)**
+
+
+
+*   **[Business Model](./slides_businessmodel/BusinessModel.html)**
+*   **[Business Model Simulation](./slides_businessmodel/BusinessModelSimulation.html)**
 
 *   **[Platform](./slides_platform/Platform.html)**
 *   **[Platform Simulation](./slides_platform/PlatformSimulation.html)**
+
+*   **[Collaboration](./slides_collaboration/Collaboration.html)**
+*   **[Collaboration Simulation](./slides_collaboration/CollaborationSimulation.html)**
+
+Reporting Response Rate: [Endsemester SEEQ](https://www.srte.psu.edu/)
+
+*   **[Evaluation](./slides_evaluation/Evaluation.html)**
+*   **[Evaluation Simulation](./slides_evaluation/EvaluationSimulation.html)**
+
 
 
 ## In-class Simulation
 
 *   **[Simulation](https://bcs.statherian.com)**
 
-## AI Writing
 
-*   **[Complement-oriented Innovation](./Complement-oriented/BottleNeckPresentation.html)**
-*   **[Trascendent Framing](./TranscendentFraming/NarrativeGrowth.html)**
 
