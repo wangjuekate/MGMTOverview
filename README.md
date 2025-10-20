@@ -44,7 +44,7 @@ Reporting Response Rate: [Endsemester SEEQ](https://www.srte.psu.edu/)
 
 
 ## In-class Simulation
-
+*   **[Midterm Review](./slides_midtermreview/Mid_termreview.html)**
 *   **[Simulation](https://bcs.statherian.com)**
 
 
