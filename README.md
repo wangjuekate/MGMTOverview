@@ -38,8 +38,8 @@ Reporting Response Rate:[Midsemester SEEQ](https://www.srte.psu.edu/)
 
 Reporting Response Rate: [Endsemester SEEQ](https://www.srte.psu.edu/)
 
-*   **[Evaluation](./slides_evaluation/Evaluation.html)**
-*   **[Evaluation Simulation](./slides_evaluation/EvaluationSimulation.html)**
+*   **[Evaluation](./slides_evaluation/Evaluation1.html)**
+*   **[Evaluation Simulation](./slides_evaluation/Evaluation2.html)**
 
 
 ## In-class Simulation

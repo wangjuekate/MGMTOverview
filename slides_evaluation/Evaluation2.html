@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-	<head>
+		<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -276,63 +276,15 @@
 			<div class="slides">
 				<!-- Slide 1: Title Slide -->
 				<section data-background-image="img/pennstate.jpg" data-background-position="top right" data-background-opacity="0.5">
-					<h2>Innovation Evaluation</h2>
+					<h2>Evaluation Simulation: Soapbottle vs. Meta</h2>
 					<h4>Kate Wang - Penn State University</h4>
 				</section>
 
-				<!-- Slide 2: Net Present Value (NPV) Overview -->
-				<section>
-					<h2>Net Present Value (NPV)</h2>
-					<p>Required for estimating project value over 5-10 years. Key components include:</p>
-					<ul>
-						<li>EBIT (Earnings Before Interest and Taxes)</li>
-						<li>Accountant Adjustment (to find Free Cash Flow)</li>
-						<li>Discount Factor (WACC)</li>
-						<li>Termination Value</li>
-					</ul>
-				</section>
-
-				<!-- Slide 3: EBIT -->
-				<section>
-					<h2>EBIT: Earnings Before Interest and Taxes</h2>
-					<div style="display: flex; justify-content: space-around;">
-						<div style="flex: 1;">
-							<h4>Gross Income</h4>
-							<ul>
-								<li>Revenue from operations (sales)</li>
-								<li>Income from fees/advertisement</li>
-							</ul>
-						</div>
-						<div style="flex: 1;">
-							<h4>All Expenses</h4>
-							<ul>
-								<li>Cost of material</li>
-								<li>Cost of power/fuel/etc.</li>
-								<li>Cost of employees</li>
-							</ul>
-						</div>
-					</div>
-					<hr>
-					<h4>Operating Profit = Gross Income - All Expenses - Depreciation</h4>
-				</section>
-
-				<!-- Slide 4: Accountant Adjustment -->
-				<section>
-					<h2>Accountant Adjustment to find Free Cash Flow (FCFF)</h2>
-					<p>FCFF adjusts EBIT for non-cash items and investments:</p>
-					<ul>
-						<li><strong>Tax:</strong> Adjust for the corporate tax rate.</li>
-						<li><strong>Non-cash Expenses:</strong> Add back depreciation.</li>
-						<li><strong>Working Capital:</strong> Adjust for changes in inventory and other working capital items.</li>
-						<li><strong>Capital Expenditures:</strong> Subtract investments in long-term assets (plant, machinery).</li>
-					</ul>
-				</section>
-
-				<!-- Slide 5: Discount Factor (WACC) -->
-				<section>
+		<section>
 					<h2>Discount Factor: WACC</h2>
 					<div style="font-size: 0.8em; margin: 30px 0;">
 						$$WACC = \left( \frac{E}{V} \cdot R_e \right) + \left( \frac{D}{V} \cdot R_d \cdot (1-T_c) \right)$$
+					
 					</div>
 					<div style="font-size: 0.8em; margin: 30px 0;">
 						$$\text{Discount factor} = \frac{1}{(1 + WACC)^{n}}$$
@@ -343,7 +295,18 @@
 					</div>
 				</section>
 
-				<!-- Slide 6: Terminal Value -->
+
+
+				<!-- Slide 4: Discount Factor for Soapbottle -->
+				<section>
+					<h2>Discount Factor (WACC) for Soapbottle</h2>
+					<p>To calculate WACC, we need to estimate:</p>
+					<p>Soap industry average stock return: 0.06</p>
+					<p>PNC bank interest rate:0.04 </p>
+					<p>Weight of equity and debt 7:3</p>
+				</section>
+
+								<!-- Slide 6: Terminal Value -->
 				<section>
 					<h2>Terminal Value</h2>
 					<p style="margin-bottom: 30px;">Estimates the value of the project beyond the explicit forecast period.</p>
@@ -357,49 +320,15 @@
 						<p><strong>Where:</strong> g = perpetual growth rate (often based on industry average or inflation)</p>
 					</div>
 				</section>
-
-				<!-- Slide 7: Key Takeaways -->
+				<!-- Slide 5: Termination Value for Soapbottle -->
 				<section>
-					<h2>Key Takeaways: Financial Evaluation Concepts</h2>
-					<div style="text-align: left; margin: 30px 0;">
-						<h3>Core Principles:</h3>
-						<ul>
-							<li><strong>NPV:</strong> A fundamental tool for assessing long-term project profitability.</li>
-							<li><strong>EBIT & FCFF:</strong> Start with earnings, then adjust for non-cash items and investments to find the actual cash available.</li>
-							<li><strong>WACC:</strong> The discount rate must reflect the project's specific risk profile and capital structure.</li>
-						</ul>
-					</div>
+					<h2>Termination Value for Soapbottle</h2>
+					<p> Growth rate is long-term growth rate of soap industry: 0.01</p>
+
+
 				</section>
 
-				<!-- Slide 8: Case Study - SOAP BOTTLE Kickstarter -->
-				<section>
-					<h2><i class="fas fa-rocket" style="color: #dc3545;"></i> Case Study: SOAP BOTTLE Kickstarter</h2>
-					<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
-						<div>
-							<h3>Project Overview</h3>
-							<ul>
-								<li><strong>Product:</strong> Innovative soap dispensing bottle</li>
-								<li><strong>Platform:</strong> Kickstarter crowdfunding</li>
-								<li><strong>Goal:</strong> Evaluate investment potential using NPV analysis</li>
-								<li><strong>Challenge:</strong> Assess financial viability of innovative consumer product</li>
-							</ul>
-						</div>
-						<div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
-							<h3>Kickstarter Project</h3>
-							<div style="margin: 20px 0;">
-								<i class="fas fa-external-link-alt" style="font-size: 2em; color: #dc3545;"></i>
-							</div>
-							<a href="https://www.kickstarter.com/projects/soapbottle/s-o-a-p-b-o-t-t-l-e" 
-							   target="_blank" 
-							   style="background: #dc3545; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold;">
-								View Project
-							</a>
-							<p style="font-size: 0.4em; margin-top: 15px; color: #666;">
-								Click to explore the actual Kickstarter campaign
-							</p>
-						</div>
-					</div>
-				</section>
+
 			</div>
 		</div>
 
