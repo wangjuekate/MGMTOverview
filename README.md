@@ -20,21 +20,23 @@ This repository contains slide decks for MGMT 457 W: Strategic Management of Inn
 *   **[Entry Timing Simulation](./slides_entrytiming/EntryTimingSimulation.html)**
 
 Reporting Response Rate:[Midsemester SEEQ](https://www.srte.psu.edu/)
+*   **[Midterm Review](./slides_midtermreview/Mid_termreview.html)**
+
 
 *   **[Competition Analyses](./slides_competitionanalyses/CompetitionAnalyses.html)**
 *   **[Competition Analyses Simulation](./slides_competitionanalyses/CompetitionAnalysesSimulation.html)**
 
 
-
-
 *   **[Business Model](./slides_businessmodel/BusinessModel.html)**
 *   **[Business Model Simulation](./slides_businessmodel/BusinessModelSimulation.html)**
+
+*   **[Collaboration](./slides_collaboration/Collaboration.html)**
+*   **[Collaboration Simulation](./slides_collaboration/CollaborationSimulation.html)**
+
 
 *   **[Platform](./slides_platform/Platform.html)**
 *   **[Platform Simulation](./slides_platform/PlatformSimulation.html)**
 
-*   **[Collaboration](./slides_collaboration/Collaboration.html)**
-*   **[Collaboration Simulation](./slides_collaboration/CollaborationSimulation.html)**
 
 Reporting Response Rate: [Endsemester SEEQ](https://www.srte.psu.edu/)
 
@@ -43,7 +45,7 @@ Reporting Response Rate: [Endsemester SEEQ](https://www.srte.psu.edu/)
 
 
 ## In-class Simulation
-*   **[Midterm Review](./slides_midtermreview/Mid_termreview.html)**
+
 *   **[Simulation](https://bcs.statherian.com)**
 
 
