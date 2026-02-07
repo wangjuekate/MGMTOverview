@@ -4,8 +4,6 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Entry Timing Simulation</title>
-
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
@@ -15,51 +13,363 @@
 
 		<!-- Font Awesome for icons -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-		
+
 		<!-- Custom styles for better presentation fonts -->
 		<style>
+			/* Monochrome Color Palette with Red Accent */
+			:root {
+				--primary-black: #000000;
+				--dark-grey: #333333;
+				--medium-grey: #666666;
+				--light-grey: #cccccc;
+				--primary-white: #ffffff;
+				--accent-red: #dc3545;
+				--accent-red-light: #f8d7da;
+				--accent-red-dark: #721c24;
+			}
+		
+			/* Global Presentation Settings */
+			.reveal {
+				font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+				background: var(--primary-white);
+				color: var(--primary-black);
+			}
+		
+			/* Typography Hierarchy */
 			.reveal h1 {
-
-				font-size: 2em;
-
+				font-size: 1.5em;
 				font-weight: 700;
 				line-height: 1.1;
-				margin-bottom: 0.3em;
+				margin-bottom: 0.5em;
+				color: var(--primary-black);
+				text-transform: none;
 			}
+		
 			.reveal h2 {
-
-				font-size: 1em;
-
+				font-size:1em;
 				font-weight: 600;
-				line-height: 1.1;
-				margin-bottom: 0.4em;
+				line-height: 1.2;
+				margin-bottom: 0.6em;
+				color: var(--primary-black);
+				padding-bottom: 0.2em;
+				text-transform: none;
 			}
+		
 			.reveal h3 {
-				font-size: 1em;
+				font-size: 0.6em;
 				font-weight: 500;
-				line-height: 1.2;
-				margin-bottom: 0.3em;
-			}
-			.reveal h4 {
-
-				font-size: 1em;
-
-				font-weight: 500;
-				line-height: 1.2;
-				margin-bottom: 0.2em;
-			}
-			.reveal p {
-				font-size: 1.1em;
 				line-height: 1.3;
 				margin-bottom: 0.5em;
+				color: var(--dark-grey);
+				text-transform: none;
 			}
-			.reveal ul li {
-				font-size: 1.0em;
-				line-height: 1.4;
-				margin-bottom: 0.3em;
+		
+			.reveal h4 {
+				font-size: 0.4em;
+				font-weight: 500;
+				line-height: 1.3;
+				margin-bottom: 0.4em;
+				color: var(--medium-grey);
+				text-transform: none;
 			}
-			.reveal .slides section {
+		
+			.reveal p {
+				font-size: 0.6em;
+				line-height: 1.6;
+				margin-bottom: 0.8em;
+				color: var(--primary-black);
+				text-transform: none;
+				text-align: left;
+			}
+		
+			.reveal ul, .reveal ol {
+				margin: 1em 0;
+			}
+		
+			.reveal ul li, .reveal ol li {
+				font-size: 0.6em;
+				line-height: 1.6;
+				margin-bottom: 0.5em;
+				color: var(--primary-black);
+			}
+		
+			/* List Styling */
+			.reveal ul li::marker {
+				color: var(--accent-red);
+			}
+		
+			.reveal ol li::marker {
+				color: var(--accent-red);
+				font-weight: bold;
+			}
+		
+			/* Text Emphasis */
+			.reveal strong {
+				color: var(--accent-red);
+				font-weight: 600;
+			}
+		
+			.reveal em {
+				color: var(--medium-grey);
+				font-style: italic;
+			}
+		
+			/* Code and Technical Terms */
+			.reveal code {
+				background: var(--light-grey);
+				padding: 2px 6px;
+				border-radius: 4px;
+				color: var(--primary-black);
+				font-family: 'Courier New', monospace;
+			}
+		
+			.qr-code {
+				background: var(--primary-white);
+				padding: 15px;
+				border: 1px solid var(--light-grey);
+			}
+		
+			.qr-code img {
+				display: block;
+			}
+		
+			.qr-instructions {
+				text-align: left;
+				max-width: 300px;
+			}
+		
+			.qr-url {
+				background: var(--accent-red-light);
+				padding: 10px;
+				margin-top: 15px;
+				border-left: 4px solid var(--accent-red);
+			}
+		
+			.qr-url span {
+				font-weight: bold;
+				color: var(--accent-red-dark);
+			}
+		
+			.matrix-exercise {
+				margin-top: 30px;
+				padding: 25px;
+				background: var(--primary-white);
+				border: 2px solid var(--accent-red);
+			}
+		
+			.matrix-exercise h3 {
+				color: var(--accent-red);
+				margin-bottom: 15px;
+				font-size: 0.6em;
+			}
+		
+			.decision-matrix {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 20px;
+				margin: 30px 0;
+			}
+		
+			.matrix-quadrant {
+				padding: 25px;
+				text-align: center;
+				border: 2px solid;
+			}
+		
+			.matrix-quadrant h4 {
+				font-size: 0.6em;
+				margin-bottom: 15px;
+				font-weight: 600;
+			}
+		
+			.matrix-quadrant p {
+				font-size: 0.6em;
+			}
+		
+			/* Quadrant Colors - Monochrome with Red Accent */
+			.quadrant-1 {
+				background: var(--primary-white);
+				border-color: var(--accent-red);
+				color: var(--primary-black);
+			}
+		
+			.quadrant-2 {
+				background: var(--light-grey);
+				border-color: var(--dark-grey);
+				color: var(--primary-black);
+			}
+		
+			.quadrant-3 {
+				background: var(--medium-grey);
+				border-color: var(--primary-black);
+				color: var(--primary-white);
+			}
+		
+			.quadrant-4 {
+				background: var(--primary-black);
+				border-color: var(--primary-black);
+				color: var(--primary-white);
+			}
+		
+			/* Icon Styling */
+			.reveal .fas, .reveal .far {
+				color: var(--accent-red);
+				margin-right: 8px;
+			}
+		
+			/* Progress Bar */
+			.reveal .progress {
+				color: var(--accent-red);
+			}
+		
+
+			/* Button Styling */
+			.reveal button {
+				background: var(--primary-white);
+				color: var(--primary-black);
+				border: 2px solid var(--accent-red);
+				padding: 12px 24px;
+				cursor: pointer;
+				font-size: 0.9em;
+				font-weight: 500;
+			}
+		
+			.reveal button:hover {
+				background: var(--accent-red);
+				color: var(--primary-white);
+			}
+		
+			/* Responsive Design */
+			@media (max-width: 800px) {
+				.reveal .slides section { 
+					padding: 20px; 
+				}
+				.qr-container { 
+					flex-direction: column; 
+					gap: 20px; 
+				}
+				.decision-matrix { 
+					grid-template-columns: 1fr; 
+				}
+			}
+		
+			/* Special Highlight Box */
+			.highlight-box {
+				background: var(--accent-red-light);
+				border-left: 5px solid var(--accent-red);
 				padding: 20px;
+				margin: 20px 0;
+			}
+
+			/* Interactive Venn Diagram Styles */
+			.venn-circle {
+				transition: all 0.3s ease;
+				cursor: pointer;
+			}
+			
+			.venn-circle:hover {
+				fill-opacity: 0.6;
+				stroke-width: 4;
+				filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+			}
+			
+			.venn-text {
+				transition: all 0.3s ease;
+				pointer-events: none;
+			}
+			
+			.venn-questions {
+				opacity: 0.7;
+				transition: opacity 0.3s ease;
+			}
+			
+			.venn-questions.highlight {
+				opacity: 1;
+				font-weight: bold;
+			}
+			
+			.intersection-area {
+				transition: all 0.3s ease;
+				cursor: pointer;
+				fill-opacity: 0;
+			}
+			
+			.intersection-area:hover {
+				fill-opacity: 0.2;
+				fill: #dc3545;
+			}
+			
+			.diagram-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				width: 100%;
+				max-width: 1000px;
+				margin: 0 auto;
+				gap: 30px;
+			}
+			
+			.venn-diagram-wrapper {
+				flex: 0 0 500px;
+				position: relative;
+			}
+			
+			.research-info-box {
+				flex: 1;
+				min-width: 300px;
+				background: rgba(255, 255, 255, 0.95);
+				border: 2px solid #dc3545;
+				border-radius: 10px;
+				padding: 20px;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.3s ease;
+				height: 350px;
+				overflow-y: auto;
+			}
+			
+			.research-info-box.visible {
+				opacity: 1;
+				visibility: visible;
+			}
+			
+			.research-info-box h4 {
+				margin: 0 0 15px 0;
+				color: #dc3545;
+				font-size: 18px;
+				font-weight: bold;
+				border-bottom: 2px solid #dc3545;
+				padding-bottom: 8px;
+			}
+			
+			.research-info-box ul {
+				margin: 0;
+				padding-left: 20px;
+				list-style-type: none;
+			}
+			
+			.research-info-box li {
+				margin-bottom: 12px;
+				font-size: 14px;
+				line-height: 1.5;
+				color: #333;
+				position: relative;
+			}
+			
+			.research-info-box li:before {
+				content: "•";
+				color: #dc3545;
+				font-weight: bold;
+				position: absolute;
+				left: -15px;
+			}
+			
+			.default-message {
+				text-align: center;
+				color: #666;
+				font-style: italic;
+				margin-top: 50px;
 			}
 		</style>
 
@@ -92,7 +402,7 @@
 			<section>
 				<h2>List on the board</h2>
 				<div style="text-align: center; margin: 50px 0;">
-					<h3> What are the difficulties faced by Helios when deciding to merge MoviePass?</h3>
+					<h3> What are First-Mover and Second-Mover Advantages faced by Helios (discussing on Appropriability; Uncertainty; Learning Effects; Network Effects & Switching Costs))?</h3>
 				</div>
 	</section>
 
@@ -108,8 +418,11 @@
 					<section>
 						<h2>CEO Key Takeaways</h2>
 						<div style="text-align: left; margin: 30px 0;">
-							<p>Strength: Data analytics and IT </p>
-							<p>Exploit current technologies or seek to acquire new technologies</p>
+							<h3>Strategic Considerations:</h3>
+							<p class="fragment fade-in"><strong>First-Mover Advantage:</strong> MoviePass has early market presence in subscription model</p>
+							<p class="fragment fade-in"><strong>Learning Effects:</strong> Can HMA leverage data analytics expertise in new market?</p>
+							<p class="fragment fade-in"><strong>Appropriability:</strong> How defensible is MoviePass's business model?</p>
+							<p class="fragment fade-in"><strong>Strategic Fit:</strong> Exploit current technologies or seek to acquire new technologies</p>
 						</div>
 					</section>
 
@@ -134,10 +447,11 @@
 				<section>
 					<h2>CFO Takeaways</h2>
 					<div style="background-color: #f0f0f0; padding: 20px; margin: 20px; border-radius: 10px;">
-						<ul>
-							<li>Financially stable is crucial for acquirer</li>
-							<li>Potential benefit of acquistion has to be consider both from the financial and strategic perspective</li>
-						</ul>
+						<h3>Financial Analysis Framework:</h3>
+						<p class="fragment fade-in"><strong>Financial Stability:</strong> Sufficient cash reserves, manageable debt levels required</p>
+						<p class="fragment fade-in"><strong>Acquisition Costs:</strong> $12M convertible note + $5M promissory note</p>
+						<p class="fragment fade-in"><strong>Revenue Stream Sustainability:</strong> Can MoviePass achieve profitability?</p>
+						<p class="fragment fade-in"><strong>Risk Assessment:</strong> High cash burn rate vs. potential synergies</p>
 					</div>
 				</section>
 				<!-- Slide 5: CTO Question -->
@@ -155,10 +469,11 @@
 				<section>
 					<h2>CMO Takeaways</h2>
 					<div style="background-color: #f0f0f0; padding: 20px; margin: 20px; border-radius: 10px;">
-						<ul>
-							<li>Market Uncertainty is critical for making acquisition decisions</li>
-							<li>Consumer adoption can be considered together with market uncertainty</li>
-						</ul>
+						<h3>Market Analysis Framework:</h3>
+						<p class="fragment fade-in"><strong>Market Uncertainty:</strong> Is subscription movie model sustainable?</p>
+						<p class="fragment fade-in"><strong>Consumer Adoption:</strong> Rapid growth but unclear long-term retention</p>
+						<p class="fragment fade-in"><strong>Network Effects:</strong> Does MoviePass create switching costs?</p>
+						<p class="fragment fade-in"><strong>Competitive Dynamics:</strong> Theater chains could launch competing services</p>
 					</div>
 
 				</section>
@@ -179,10 +494,11 @@
 				<section>
 					<h2>COO Takeaways</h2>
 					<div style="background-color: #f0f0f0; padding: 20px; margin: 20px; border-radius: 10px;">
-						<ul>
-							<li>Is the revenue stream sustainable?</li>
-							<li>Is the cost structure scalable?</li>
-						</ul>
+						<h3>Operational Analysis Framework:</h3>
+						<p class="fragment fade-in"><strong>Revenue Sustainability:</strong> Subscription model vs. per-ticket costs</p>
+						<p class="fragment fade-in"><strong>Cost Structure Scalability:</strong> Variable costs increase with usage</p>
+						<p class="fragment fade-in"><strong>Scale Economies:</strong> Can HMA achieve operational efficiencies?</p>
+						<p class="fragment fade-in"><strong>First-Mover Operational Risk:</strong> Unproven business model at scale</p>
 					</div>
 
 				</section>
@@ -202,10 +518,11 @@
 				<section>
 					<h2>CHRO Takeaways</h2>
 					<div style="background-color: #f0f0f0; padding: 20px; margin: 20px; border-radius: 10px;">
-						<ul>
-							<li>If acquired MoviePass, no need for social media marketing</li>
-							<li>If not acquire MoviePass, no need for social media marketing</li>
-						</ul>
+						<h3>Human Capital Analysis:</h3>
+						<p class="fragment fade-in"><strong>Talent Acquisition:</strong> Consumer tech vs. B2B analytics expertise</p>
+						<p class="fragment fade-in"><strong>Learning Curve:</strong> Can existing team adapt to consumer market?</p>
+						<p class="fragment fade-in"><strong>Cultural Integration:</strong> Startup culture vs. analytics firm</p>
+						<p class="fragment fade-in"><strong>Resource Allocation:</strong> Social media marketing vs. technology engineers</p>
 					</div>
 				</section>
 
@@ -227,10 +544,11 @@
 				<section>
 					<h2>CTO Takeaways</h2>
 					<div style="background-color: #f0f0f0; padding: 20px; margin: 20px; border-radius: 10px;">
-						<ul>
-							<li>Is the technology well protected?</li>
-							<li>Is the technology scalable?</li>
-						</ul>
+						<h3>Technology Analysis Framework:</h3>
+						<p class="fragment fade-in"><strong>Appropriability (Teece, 1986):</strong> Is MoviePass technology protected?</p>
+						<p class="fragment fade-in"><strong>Technology Scalability:</strong> Can infrastructure handle rapid growth?</p>
+						<p class="fragment fade-in"><strong>Complementary Assets:</strong> Theater partnerships critical for success</p>
+						<p class="fragment fade-in"><strong>Competitive Threat:</strong> Easy for competitors to replicate app/model</p>
 					</div>
 				</section>
 
@@ -245,96 +563,16 @@
 					
 
 					<div style="text-align: left; margin: 30px 0;">
-						<h3>Entry Timing</h3>
-						<ul>
-							<li>Acquisition is one way for firms to enter a new market</li>
-							<li>Decision of entry timing depends on market uncertainty and technology protection</li>
-						</ul>
+						<h3>Entry Timing Framework Applied:</h3>
+						<p class="fragment fade-in"><strong>First-Mover Advantage:</strong> MoviePass entered early but with unsustainable model</p>
+						<p class="fragment fade-in"><strong>Appropriability (Teece, 1986):</strong> Weak - easy to replicate subscription model</p>
+						<p class="fragment fade-in"><strong>Market Uncertainty:</strong> High - unclear if consumers would sustain subscriptions</p>
+						<p class="fragment fade-in"><strong>Learning Effects:</strong> Limited - no steep learning curve in ticketing</p>
+						<p class="fragment fade-in"><strong>Network Effects:</strong> Weak - no strong switching costs for consumers</p>
+						<p class="fragment fade-in"><strong>Conclusion:</strong> Poor entry timing despite market excitement</p>
 					</div>
 				</section>	
                     
-
-		
-                <section>
-                    <h2>Write down your prompts to describe what are potential entry timing for your team's technology and how would you choose the entry timing?</h2>
-                    <p>Post both the prompt and the results under the in-class prompt discussion for this week</p>
-            
-                </section>
-                    
-                <section>
-                    <h2>Evaluation</h2>
-                    <p>What do you think we can do better?</p>
-            
-                </section>
-				<!-- Slide 12: The Real Decision & Consequences -->
-				<section>
-					<h2><i class="fas fa-exclamation-triangle" style="color: #dc3545;"></i> The Real Decision & Consequences</h2>
-					<div style="background: #f8d7da; padding: 30px; border-radius: 15px; text-align: center;">
-						<h3><i class="fas fa-times-circle" style="color: #dc3545;"></i> HMA Did Acquire MoviePass</h3>
-						<p style="font-size: 1.2em;"><strong>Poor Entry Timing Decision</strong></p>
-					</div>
-					<div class="fragment" style="margin-top: 30px;">
-						<h3>The Consequences:</h3>
-						<ul>
-							<li><strong>2019:</strong> HMA shut down MoviePass</li>
-							<li><strong>2020:</strong> HMA went bankrupt</li>
-							<li><strong>Financial Details:</strong> $12M convertible note + $5M promissory note</li>
-							<li><strong>Entry Timing Lesson:</strong> Wrong timing despite market excitement</li>
-						</ul>
-					</div>
-				</section>
-
-				<!-- Slide 13: Why MoviePass Failed -->
-				<section>
-					<h2><i class="fas fa-chart-line-down" style="color: #dc3545;"></i> Why MoviePass Failed</h2>
-					<div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-						<h3>Business Model Problems</h3>
-						<ul>
-							<li><strong>Unsustainable Pricing:</strong> $9.95/month for unlimited movies</li>
-							<li><strong>Cash Burn:</strong> Paying full ticket prices while charging low subscription</li>
-							<li><strong>Market Timing:</strong> Too early for sustainable subscription model</li>
-							<li><strong>Financial Strain:</strong> HMA's poor financial health made acquisition risky</li>
-						</ul>
-					</div>
-					<div class="fragment">
-						<h3><i class="fas fa-lightbulb" style="color: #ffc107;"></i> Entry Timing Lesson</h3>
-						<p>MoviePass demonstrates poor entry timing - exciting market opportunity but unsustainable business model and wrong financial timing for acquirer.</p>
-					</div>
-				</section>
-
-				<!-- Slide 14: What Should HMA Have Done? -->
-				<section>
-					<h2><i class="fas fa-lightbulb" style="color: #ffc107;"></i> What Should HMA Have Done?</h2>
-					<div style="background: #e8f5e8; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
-						<h3>Better Entry Timing Strategy</h3>
-						<ul>
-							<li><strong>Focus on Zone Technologies:</strong> Develop existing acquisition first</li>
-							<li><strong>Financial Stability:</strong> Improve cash flow before major acquisitions</li>
-							<li><strong>Market Analysis:</strong> Recognize MoviePass pricing was unsustainable</li>
-							<li><strong>Risk Assessment:</strong> Avoid high-risk acquisitions during financial stress</li>
-						</ul>
-					</div>
-					<div class="fragment" style="text-align: center; background: #e3f2fd; padding: 15px; border-radius: 10px;">
-						<p><strong>Key Insight:</strong> Entry timing isn't just about market opportunity - it's about your company's readiness and the sustainability of the business model</p>
-					</div>
-				</section>
-
-				<!-- Slide 15: Reflection Questions -->
-				<section>
-					<h2><i class="fas fa-think" style="color: #007bff;"></i> Reflection Questions</h2>
-					<div style="text-align: left;">
-						<h3>Individual Reflection (5 minutes)</h3>
-						<ol>
-							<li>What factors were most important in your decision-making process?</li>
-							<li>How did your role's perspective influence your analysis?</li>
-							<li>What would you do differently if making this decision today?</li>
-							<li>How can companies better assess entry timing opportunities?</li>
-						</ol>
-						<div class="fragment" style="margin-top: 30px; background: #e3f2fd; padding: 15px; border-radius: 8px;">
-							<p><strong>Key Takeaway:</strong> Entry timing success requires analyzing technology readiness, market demand, competitive landscape, and strategic fit simultaneously.</p>
-						</div>
-					</div>
-				</section>
 
 			</div>
 		</div>
