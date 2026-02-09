@@ -13,11 +13,12 @@ This repository contains slide decks for MGMT 457 W: Strategic Management of Inn
 *   **[Dominant Design](./slides_dominantdesign/DominantDesignslides.html)**
 *   **[Dominant Design Simulation](./slides_dominantdesign/DominantDesign_simulation.html)**
 
+*   **[Entry Timing](./slides_entrytiming/EntryTiming.html)**
+*   **[Entry Timing Simulation](./slides_entrytiming/EntryTimingSimulation.html)**
+
 *   **[Value Chain](./slides_valuechain/ValueChain.html)**
 *   **[Value Chain Simulation](./slides_valuechain/ValueChainSimulation.html)**
 
-*   **[Entry Timing](./slides_entrytiming/EntryTiming.html)**
-*   **[Entry Timing Simulation](./slides_entrytiming/EntryTimingSimulation.html)**
 
 Reporting Response Rate:[Midsemester SEEQ](https://www.srte.psu.edu/)
 *   **[Midterm Review](./slides_midtermreview/Mid_termreview.html)**
