@@ -53,3 +53,5 @@ Reporting Response Rate: [Endsemester SEEQ](https://www.srte.psu.edu/)
 
 *   **[Teaching Demo](./JobTalk/TeachingPresentation.html)**
 *   **[Research Demo](./JobTalk/CVC_Invest.html)**
+*   **[MaterialDownload](./JobTalk/MaterialDownload/EntryTimingSimulation.docx)**
+
