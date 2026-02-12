@@ -1,0 +1,59 @@
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lllllll}
+  \hline
+
+Variable &	Operationalization & level of analyses &	Source/related citations \\
+\hline
+Dependent variable & & & \\
+\hline
+Alliance (coded 1) & Cooperative relationship either equity or non-equity & focal-partner & VentureXpert and SDC \\
+Acquisition (coded 0) & Cumulative ownership of 50 \% or more or controlling interest & focal-partner  & Zephyr \\
+Independent variable & & & \\
+Technological complementarity & $D_{comp} = \sqrt{\sum_{c \in C} (S_{f,c} - S_{p,c})^2}$ & focal-partner  & USPTO \\
+Partner component uncertainty & $U_c = N_c \times P_c$ where $N_c = \frac{\text{New patents}_c}{\text{Total patents}_c}$ & partner firm & USPTO \\
+Focal firm modularity & $M_f = \sum_{t=0}^{T} \text{APIs}_t$ & focal firm & GitHub \\
+\hline
+Control variable & & & \\
+\hline
+Focal Firm & & & \\
+\hline
+Firm size & $\ln(\text{Assets}_{t-1})$ & focal firm& Compustat: De Carolis and Deeds, 1999, Pisano, 1990 \\
+Firm age & $\ln(\text{Age}_{t-1})$ &focal firm & Compustat \\
+RD intensity & $\frac{\text{R\&D}_{t-1}}{\text{Assets}_{t-1}}$ & focal firm & Compustat \\
+ROA & $\frac{\text{Revenue}_{t-1}}{\text{Assets}_{t-1}}$ & firm & Compustat: Hagedoorn \& Sadowski, 1999, De Carolis and Deeds, 1999, Pisano, 1990; Van Wijk et al., 2008\\
+Financial slack & $(Current Assets – Current Liabilities) / Total Assets$ in last year &focal firm& Compustat: Hennart \& Reddy, 1997 \\
+
+
+Experience of MA & $\sum_{\tau=0}^{t-1} \text{MA}_{\tau}$ & focal firm & Zephyr: (Zhang, 2023;Carayannopoulos \& Auster, 2010)\\
+Experience of alliances & $\sum_{\tau=0}^{t-1} \text{Alliance}_{\tau}$ & focal firm& SDC and VentureXpert: (Zhang, 2023;Carayannopoulos \& Auster, 2010)\\
+
+Technological capital & $\sum_{\tau=0}^{t-1} \text{Patents}_{\tau}$ & focal firm & USPTO: (Ahuja and Katila, 2001, Cloodt et al., 2006)\\
+Depth of tech capital & $\sum_{i \in P_f} \text{BackwardCitations}_i$ & focal firm & USPTO: (Toh and Miller, 2017)\\
+
+\hline
+Partner Firm & & & \\
+Partner tech capital & $\sum_{\tau=t-5}^{t-1} \text{Patents}_{p,\tau}$ & partner firm & USPTO: (Ahuja and Katila, 2001, Cloodt et al., 2006)\\
+Partner depth of technologies& $\sum_{i \in P_{p,t-1}} \text{BackwardCitations}_i$ & partner firm& USPTO: (Toh and Miller, 2017)\\
+Knowledge complexity & $K_{complex,c} = \frac{|\text{Subclasses}_c|}{|\text{Patents}_c|} \times \frac{|\text{CombPatents}_p|}{|\text{Patents}_p|}$ & partner firm & USPTO and Compustat: Carayannopoulos and Auster, 2010\\
+Knowledge specificity & $K_{spec,c} = \frac{\text{R\&D}_c}{\text{Sales}_c} \times \frac{|\text{CombPatents}_p|}{|\text{Patents}_p|}$ & partner firm & USPTO and Compustat: Carayannopoulos and Auster, 2010\\
+Knowledge value & $K_{value,c} = \frac{\text{Revenue}_{c,t} - \text{Revenue}_{c,t-1}}{\text{Revenue}_{c,t-1}} \times \frac{|\text{CombPatents}_p|}{|\text{Patents}_p|}$ & partner firm & USPTO and Compustat: Carayannopoulos and Auster, 2010\\
+\hline
+
+Dyadic & & & \\
+Technological similarity & $|\text{Subclasses}_f \cap \text{Subclasses}_p|$ & focal-partner & USPTO (Hagedoorn \& Duysters, 2002)Ahuja and Katila, 2001, Cloodt et al., 2006\\
+Cross-industry investing  & $\mathbb{1}(\text{Industry}_f \neq \text{Industry}_p)$ & focal-partner & Compustat Wang \& Zajac, 2007; Ang et al., 2015\\
+\hline
+Idenfity variables & & & \\
+Capital intensity & capital expenditure/sales& focal firm & Tong Li 2011\\
+Financial leverage & long-term debt/ total capital & focal firm&Tong Li 2011\\
+\hline
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Note: $D_{comp}$ = Euclidean distance between component scores; $C$ = set of components (data, computing, algorithm); $S_{f,c}$ = focal firm's score on component $c$; $S_{p,c}$ = partner firm's score on component $c$. $U_c$ = uncertainty for component $c$; $N_c$ = novelty score; $P_c$ = proportion of component patents. $M_f$ = modularity of focal firm; $\text{APIs}_t$ = number of APIs at time $t$; $T$ = current time period. $P_f$ = set of patents owned by focal firm; $P_{p,t-1}$ = set of patents owned by partner firm in year $t-1$. $K_{complex,c}$ = knowledge complexity for component $c$; $|\text{Subclasses}_c|$ = number of unique subclasses; $|\text{Patents}_c|$ = number of patents in component $c$; $|\text{CombPatents}_p|$ = number of combination patents (patents with AI component scores $>0.1$ on multiple components). $\mathbb{1}(\cdot)$ = indicator function. All time-varying variables measured at $t-1$ (one year prior to deal) unless otherwise specified.
+\end{tablenotes}
+\end{table}
+

@@ -1,0 +1,992 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+
+		<!-- Font Awesome for icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+		<!-- Custom styles for better presentation fonts -->
+		<style>
+			/* Monochrome Color Palette with Red Accent */
+			:root {
+				--primary-black: #000000;
+				--dark-grey: #333333;
+				--medium-grey: #666666;
+				--light-grey: #cccccc;
+				--primary-white: #ffffff;
+				--accent-red: #dc3545;
+				--accent-red-light: #f8d7da;
+				--accent-red-dark: #721c24;
+			}
+		
+			/* Global Presentation Settings */
+			.reveal {
+				font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+				background: var(--primary-white);
+				color: var(--primary-black);
+			}
+		
+			/* Typography Hierarchy */
+			.reveal h1 {
+				font-size: 1.5em;
+				font-weight: 700;
+				line-height: 1.1;
+				margin-bottom: 0.5em;
+				color: var(--primary-black);
+				text-transform: none;
+			}
+		
+			.reveal h2 {
+				font-size:1em;
+				font-weight: 600;
+				line-height: 1.2;
+				margin-bottom: 0.6em;
+				color: var(--primary-black);
+				padding-bottom: 0.2em;
+				text-transform: none;
+			}
+		
+			.reveal h3 {
+				font-size: 0.6em;
+				font-weight: 500;
+				line-height: 1.3;
+				margin-bottom: 0.5em;
+				color: var(--dark-grey);
+				text-transform: none;
+			}
+		
+			.reveal h4 {
+				font-size: 0.4em;
+				font-weight: 500;
+				line-height: 1.3;
+				margin-bottom: 0.4em;
+				color: var(--medium-grey);
+				text-transform: none;
+			}
+		
+			.reveal p {
+				font-size: 0.6em;
+				line-height: 1.6;
+				margin-bottom: 0.8em;
+				color: var(--primary-black);
+				text-transform: none;
+				text-align: left;
+			}
+		
+			.reveal ul, .reveal ol {
+				margin: 1em 0;
+			}
+		
+			.reveal ul li, .reveal ol li {
+				font-size: 0.6em;
+				line-height: 1.6;
+				margin-bottom: 0.5em;
+				color: var(--primary-black);
+			}
+		
+			/* List Styling */
+			.reveal ul li::marker {
+				color: var(--accent-red);
+			}
+		
+			.reveal ol li::marker {
+				color: var(--accent-red);
+				font-weight: bold;
+			}
+		
+			/* Text Emphasis */
+			.reveal strong {
+				color: var(--accent-red);
+				font-weight: 600;
+			}
+		
+			.reveal em {
+				color: var(--medium-grey);
+				font-style: italic;
+			}
+		
+			/* Code and Technical Terms */
+			.reveal code {
+				background: var(--light-grey);
+				padding: 2px 6px;
+				border-radius: 4px;
+				color: var(--primary-black);
+				font-family: 'Courier New', monospace;
+			}
+		
+			.qr-code {
+				background: var(--primary-white);
+				padding: 15px;
+				border: 1px solid var(--light-grey);
+			}
+		
+			.qr-code img {
+				display: block;
+			}
+		
+			.qr-instructions {
+				text-align: left;
+				max-width: 300px;
+			}
+		
+			.qr-url {
+				background: var(--accent-red-light);
+				padding: 10px;
+				margin-top: 15px;
+				border-left: 4px solid var(--accent-red);
+			}
+		
+			.qr-url span {
+				font-weight: bold;
+				color: var(--accent-red-dark);
+			}
+		
+			.matrix-exercise {
+				margin-top: 30px;
+				padding: 25px;
+				background: var(--primary-white);
+				border: 2px solid var(--accent-red);
+			}
+		
+			.matrix-exercise h3 {
+				color: var(--accent-red);
+				margin-bottom: 15px;
+				font-size: 0.6em;
+			}
+		
+			.decision-matrix {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 20px;
+				margin: 30px 0;
+			}
+		
+			.matrix-quadrant {
+				padding: 25px;
+				text-align: center;
+				border: 2px solid;
+			}
+		
+			.matrix-quadrant h4 {
+				font-size: 0.6em;
+				margin-bottom: 15px;
+				font-weight: 600;
+			}
+		
+			.matrix-quadrant p {
+				font-size: 0.6em;
+			}
+		
+			/* Quadrant Colors - Monochrome with Red Accent */
+			.quadrant-1 {
+				background: var(--primary-white);
+				border-color: var(--accent-red);
+				color: var(--primary-black);
+			}
+		
+			.quadrant-2 {
+				background: var(--light-grey);
+				border-color: var(--dark-grey);
+				color: var(--primary-black);
+			}
+		
+			.quadrant-3 {
+				background: var(--medium-grey);
+				border-color: var(--primary-black);
+				color: var(--primary-white);
+			}
+		
+			.quadrant-4 {
+				background: var(--primary-black);
+				border-color: var(--primary-black);
+				color: var(--primary-white);
+			}
+		
+			/* Icon Styling */
+			.reveal .fas, .reveal .far {
+				color: var(--accent-red);
+				margin-right: 8px;
+			}
+		
+			/* Progress Bar */
+			.reveal .progress {
+				color: var(--accent-red);
+			}
+		
+
+			/* Button Styling */
+			.reveal button {
+				background: var(--primary-white);
+				color: var(--primary-black);
+				border: 2px solid var(--accent-red);
+				padding: 12px 24px;
+				cursor: pointer;
+				font-size: 0.9em;
+				font-weight: 500;
+			}
+		
+			.reveal button:hover {
+				background: var(--accent-red);
+				color: var(--primary-white);
+			}
+		
+			/* Responsive Design */
+			@media (max-width: 800px) {
+				.reveal .slides section { 
+					padding: 20px; 
+				}
+				.qr-container { 
+					flex-direction: column; 
+					gap: 20px; 
+				}
+				.decision-matrix { 
+					grid-template-columns: 1fr; 
+				}
+			}
+		
+			/* Special Highlight Box */
+			.highlight-box {
+				background: var(--accent-red-light);
+				border-left: 5px solid var(--accent-red);
+				padding: 20px;
+				margin: 20px 0;
+			}
+
+			/* Interactive Venn Diagram Styles */
+			.venn-circle {
+				transition: all 0.3s ease;
+				cursor: pointer;
+			}
+			
+			.venn-circle:hover {
+				fill-opacity: 0.6;
+				stroke-width: 4;
+				filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+			}
+			
+			.venn-text {
+				transition: all 0.3s ease;
+				pointer-events: none;
+			}
+			
+			.venn-questions {
+				opacity: 0.7;
+				transition: opacity 0.3s ease;
+			}
+			
+			.venn-questions.highlight {
+				opacity: 1;
+				font-weight: bold;
+			}
+			
+			.intersection-area {
+				transition: all 0.3s ease;
+				cursor: pointer;
+				fill-opacity: 0;
+			}
+			
+			.intersection-area:hover {
+				fill-opacity: 0.2;
+				fill: #dc3545;
+			}
+			
+			.diagram-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				width: 100%;
+				max-width: 1000px;
+				margin: 0 auto;
+				gap: 30px;
+			}
+			
+			.venn-diagram-wrapper {
+				flex: 0 0 500px;
+				position: relative;
+			}
+			
+			.research-info-box {
+				flex: 1;
+				min-width: 300px;
+				background: rgba(255, 255, 255, 0.95);
+				border: 2px solid #dc3545;
+				border-radius: 10px;
+				padding: 20px;
+				box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.3s ease;
+				height: 350px;
+				overflow-y: auto;
+			}
+			
+			.research-info-box.visible {
+				opacity: 1;
+				visibility: visible;
+			}
+			
+			.research-info-box h4 {
+				margin: 0 0 15px 0;
+				color: #dc3545;
+				font-size: 18px;
+				font-weight: bold;
+				border-bottom: 2px solid #dc3545;
+				padding-bottom: 8px;
+			}
+			
+			.research-info-box ul {
+				margin: 0;
+				padding-left: 20px;
+				list-style-type: none;
+			}
+			
+			.research-info-box li {
+				margin-bottom: 12px;
+				font-size: 14px;
+				line-height: 1.5;
+				color: #333;
+				position: relative;
+			}
+			
+			.research-info-box li:before {
+				content: "•";
+				color: #dc3545;
+				font-weight: bold;
+				position: absolute;
+				left: -15px;
+			}
+			
+			.default-message {
+				text-align: center;
+				color: #666;
+				font-style: italic;
+				margin-top: 50px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- Title page -->
+				<section>
+					<h2>Technological Complementarity and CVC Investment: The case of Artificial Intelligence</h2>
+					<p>Kate Jue Wang</p>
+					<p><span style="color: lightgrey;">Penn State University</span></p>
+					<p>Yong Li</p>
+					<p><span style="color: lightgrey;">UNLV</span></p>
+
+				</section>
+				<!-- Motivation -->
+	
+				<!-- Slide 2: Research Motivation -->
+			<section>
+				<p class="fragment"><strong>Research Question: How does complementarity between CVC and ventures drive CVCs to invest in ventures? </strong></p>
+				<p class="fragment"><strong>Corporate venture capital (CVC)</strong> is defined as minority equity investment by established firms in independent <strong>ventures</strong> <span style="color: lightgrey;">(Dushnitsky and Lenox, 2005; Gompers et al., 2008)</span></p>
+				
+				<p class="fragment"><strong>Prior Mechanism (asset complementarity): </strong></p>
+				<p class="fragment">1. Financial return mechanism <span style="color: lightgrey;">(Chemmanur, et al., 2011; Gompers and Lerner, 2000)</span></p>
+				<p class="fragment">2. Strategic option mechanism: Window on external technology <span style="color: lightgrey;">(Huang and Madhavan, 2021; Katila, et al., 2008; Block and MacMillan, 1993; Wadhwa and Kotha, 2006)</span></p>
+							
+				<p class="fragment"><strong>This paper's mechanism (technological complementarity):</strong></p>
+				<p class="fragment">Sorting mechanism: CVC will invest in ventures when CVC parent's technological components and ventures' technological complements are complementary to each other.</p>
+			</section>
+
+
+
+			<section>
+				<p>Why do we need sorting mechanism?</p>
+
+				<div style="display: flex; justify-content: space-between; gap: 15px; margin-top: 20px; font-size: 0.65em;">
+					<!-- Column 1: Traditional Mechanism -->
+						<div style="flex: 1; text-align: left; min-width: 0;">
+							<h3 style="color: #dc3545; margin-bottom: 10px; font-size: 0.9em;">Prior Mechanism</h3>
+							
+							<div class="fragment" style="background: white; color: black; border: 2px solid black; padding: 10px; border-radius: 10px; margin-bottom: 10px;">
+								<p class="fragment" style="margin: 0; font-size: 0.7em;">Asset complementarity <span style="color: lightgrey;">(Teece, 2018)</span></p>
+							</div>
+							
+							<div class="fragment" style="text-align: center; font-size: 0.5em; margin: 5px 0;">↓</div>
+							
+							<div class="fragment" style="background: white; color: black; border: 2px solid black; padding: 10px; border-radius: 10px; margin-bottom: 10px;">
+								<p class="fragment" style="margin: 0; font-size: 0.7em;">Capture value by providing complementary assets<span style="color: lightgrey;">(Harrison, Hitt, Hoskisson, & Ireland, 2001 ; Ketchen, Ireland, & Snow, 2007)</span></p>
+							</div>
+							
+							<div class="fragment" style="text-align: center; font-size: 0.5em; margin: 5px 0;">↓</div>
+							
+							<div class="fragment" style="background: white; color: black; border: 2px solid black; padding: 10px; border-radius: 10px;">
+								<p class="fragment" style="margin: 0; font-size: 0.7em;">CVC invest in ventures</p>
+							</div>
+						</div>
+
+						<!-- Column 2: Premises -->
+						<div style="flex: 1; text-align: left; min-width: 0;">
+							<h3 style="color: #dc3545; margin-bottom: 10px; font-size: 0.9em;">Premises</h3>
+							
+							<div class="fragment" style="background: #f8f9fa; color: black; border: 2px dashed #6c757d; padding: 10px; border-radius: 10px; margin-bottom: 10px;">
+								<p class="fragment" style="margin: 0; font-size: 0.7em;"><strong>1.</strong> Control complementary specialized assets to capture value (Teece, 1986; Hart & Moore, 1990) </p>
+							</div>
+							
+							<div class="fragment" style="background: #f8f9fa; color: black; border: 2px dashed #6c757d; padding: 10px; border-radius: 10px;">
+								<p class="fragment" style="margin: 0; font-size: 0.7em;"><strong>2.</strong> One-side decision-making where CVCs select the ventures as they need (Dyer & Singh, 1998; Harrison et al., 2001)
+</p>
+							</div>
+						</div>
+
+						<!-- Column 3: AI technologies with three components -->
+						<div style="flex: 1; text-align: left; min-width: 0;">
+							<h3 style="color: #dc3545; margin-bottom: 10px; font-size: 0.9em;">Tech View Shift:</h3>
+
+							<p class="fragment" style="font-size: 0.7em; margin-bottom: 10px;">From  “single innovation” (Teece, 2018) to system of components(Arthur, 2009)</p>
+
+							<p class="fragment" style="font-size: 0.7em; margin-bottom: 10px;"><strong>Examples:</strong> AI = algorithms + compute + data; UAVs (drones) = computing power + data + algorithms; Electronic cars (EVs) = combination of battery packs, power electronics, control algorithms, etc.</p>
+
+						</div>
+
+						<!-- Column 4: Challenged Premises -->
+						<div style="flex: 1; text-align: left; min-width: 0;">
+							<h3 style="color: #dc3545; margin-bottom: 10px; font-size: 0.9em;">Challenged Premises</h3>
+							<p class="fragment" style="font-size: 0.7em; margin-bottom: 10px;"><strong>1.</strong> Complementarity among technological components cannot be reliably priced before outcomes are observed.</p>
+							<p class="fragment" style="font-size: 0.7em; margin-bottom: 10px;"><strong>2.</strong> CVC parent firms do not have strong power over ventures (from one-sided to two-sided decision process). </p>
+							<p class="fragment" style="font-size: 0.5em; margin-left: 20px; margin-top: 5px;">• VoxelSensors — deep-tech hardware/AI sensor startup declined offers from multiple CVCs (Brett, 2025)</p>
+							<p class="fragment" style="font-size: 0.5em; margin-left: 20px; margin-top: 5px;">• FuriosaAI, a South Korean AI startup, rejected strategic offer from Meta </p>
+						</div>
+					</div>
+
+				</section>
+
+
+				<section>
+					<h2>Overview of Today's Presentation</h2>
+					<p class="fragment">1. Theorize how technological complementarity between CVC firms and ventures influence the probability of CVC investment decisions through technological innovation mechanism.</p>
+					<p class="fragment">2. Empirically testing the mechanism by examining 177 CVC firms, 1,205 AI ventures, and 2,496 deals during 1994-2022</p>
+					<p class="fragment">3. Develop boundary conditions to confirm the mechanism</p>
+					<p class="fragment">4. Rule out alternative explanations with supplement analyses and robust checks</p>
+				</section>
+
+<section>
+  <h2>Preview of the Findings: Evidence of a Sorting Mechanism</h2>
+
+  <p class="fragment">
+    <strong>1.</strong> Consistent with sorting, a one–standard deviation increase in technological complementarity is associated with a 5.5% increase in the probability of CVC investment from the mean.
+  </p>
+
+  <p class="fragment">
+    <strong>2.</strong> The effect of technological complementarity weakens under high incomplete competition, when a limited pool of suitable counterparties constrains mutual matching. 
+  </p>
+
+  <p class="fragment">
+    <strong>3.</strong> Sorting occurs along specific configurations of technological components. CVCs are more likely to match with ventures when corporate parents contribute computing and algorithms, while ventures contribute data and algorithms.
+  </p>
+
+  <p class="fragment">
+    <strong>4.</strong> Post-sorting:  CVCs and ventures benefit from the joint development of more AI patents. 
+  </p>
+</section>
+
+
+				
+				
+			<section>
+			<h2>Definition of Key Constructs</h2>
+
+			<p class="fragment"><strong>Complementary assets:</strong> Assets whose market value increases when they are deployed together rather than separately. <span style="color: lightgrey;">(Teece, 1986; Hart & Moore, 1990)</span></p>
+			<p class="fragment"><strong>Asset complementarity between CVC firms and ventures:</strong> A condition in which a CVC firm and an entrepreneurial venture each possess assets (e.g., manufacturing, distribution, branding, regulatory access) that generate greater market performance when combined across organizational boundaries. <span style="color: lightgrey;">(Dyer & Singh, 1998; Harrison et al., 2001)</span></p>
+			</section>
+		
+			<section>
+			<h2>Definition of Key Constructs</h2>
+			<p class="fragment"><strong>Complementary technological components:</strong> Technological elements whose functional improves when they are integrated with one another. <span style="color: lightgrey;">(Topkis, 1978, 1998; Milgrom & Roberts, 1990, 1998)</span></p>
+			<p class="fragment"><strong>Technological complementarity between CVC firms and ventures:</strong> A condition in which a CVC firm and an entrepreneurial venture possess distinct technological components (e.g., algorithms, data, computing infrastructure) that achieve superior technical performance when integrated across firms. <span style="color: lightgrey;">(Arthur, 2009; Gregory et al., 2021)</span></p>
+			</section>
+
+				<section style="font-size:0.8em;">	
+<h2>Example: Technological Complementarity in AI</h2>
+<p class="fragment">AI as an emerging tech (1994-2022) </p>
+	<p class="fragment">Expert systems in 1970s-80s went nowhere; AI winter 1987-1993 </p>
+	<p class="fragment">In 1994, shift to neural networks and probabilistic models; computing progress; renewed funding from DARPA/Bell Lab <span style="color: lightgrey;">(Campbell, Hoane & Hsu, 2002; Crevier, 1993; Hendler, 1994; Jelinek, 1998; McCorduck, 2004; Widrow, et al., 1994)</span> </p>
+	<p class="fragment">In 2022, OpenAI launched ChatGPT 3.5</p>
+
+<p class="fragment">AI as a tech system </p>
+	<p class="fragment">AI has three components: algorithm, computing, and data <span style="color: lightgrey;">(Gregory et al., 2021; Jacobides et al., 2021; Taddy, 2019)</span></p>
+<p class="fragment">Technological complementarity among algorithm, computing and data</p>
+	<p class="fragment">Tech capabilities in ALL 3 are needed for AI foundational models and applications to function </p>
+	<p class="fragment">Algorithm, computing power, data capabilities will perform better when the two other components are optimally arranged</p>
+	</section>		
+
+
+
+
+		
+			<section>
+		<h2>Sorting Mechanism</h2>
+		
+		<h3>Core Premises</h3>
+		<p class="fragment">CVCs and ventures are heterogeneous; collaboration value is partner-specific <span style="color: lightgrey;">(Mindruta et al., 2016; Fox & Santiago, 2014)</span></p>
+		<p class="fragment">Each side observes signals of partner value, including technological fit and complementarities <span style="color: lightgrey;">(Sorensen, 2007; Mindruta et al., 2016)</span></p>
+		<p class="fragment">Both CVCs and ventures actively choose whether to invest and accept investment <span style="color: lightgrey;">(Gale & Shapley, 1962; Ostrovsky, 2008)</span></p>
+		<p class="fragment">The market is competitive on both sides, with multiple potential partners <span style="color: lightgrey;">(Mindruta et al., 2016; Fudge Kamal et al., 2021)</span></p>
+		
+
+	</section>
+
+
+			<section>
+					<h3>Two-Sided Matching Logic (Conceptual Backbone)</h3>
+		<p class="fragment">Value creation depends on complementarities between heterogeneous, indivisible partner attributes <span style="color: lightgrey;">(Dyer & Singh, 1998; Mindruta et al., 2016)</span></p>
+		<p class="fragment">Both parties must mutually consent for the relationship to form <span style="color: lightgrey;">(Gale & Shapley, 1962; Kojima & Pathak, 2009)</span></p>
+		<p class="fragment">Market-level outcomes emerge from competition and choice on both sides <span style="color: lightgrey;">(Ostrovsky, 2008; Fudge Kamal et al., 2021)</span></p>	
+
+	</section>
+				<section>
+
+							<p>H1: When the technological complementarity between CVCs and ventures is high, CVCs are more likely to invest in ventures. </p>
+							<div style="display: flex; align-items: flex-start; justify-content: center; gap: 20px; flex-wrap: nowrap;">
+								<!-- Box 1 -->
+								<div class="fragment" style="background: white; color: black; border: 2px solid black; padding: 15px 20px; border-radius: 10px; text-align: center; width: 160px; font-size: 0.65em; flex-shrink: 0;">
+									<p class="fragment" style="margin: 0;">Technological complementarity creates asymmetric value across CVC–venture pairs (Dyer & Singh, 1998; Mindruta et al., 2016)</p>
+								</div>
+								
+								<!-- Arrow 1 with explanation below -->
+								<div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0; min-width: 180px;">
+									<div class="fragment" style="font-size: 2em; color: black;">→</div>
+									<div class="fragment" style="font-size: 0.4em; color: black; text-align: center; max-width: 180px; margin-top: 8px; line-height: 1.4;">
+										<p class="fragment" style="margin: 0;">CVCs compete for ventures whose technologies best extend or integrate with their existing architectures;Ventures selectively engage CVCs whose technologies enhance scaling, deployment, or downstream integration</p>
+									</div>
+								</div>
+								
+								<!-- Box 2 -->
+								<div class="fragment" style="background: white; color: black; border: 2px solid black; padding: 15px 20px; border-radius: 10px; text-align: center; width: 160px; font-size: 0.65em; flex-shrink: 0;">
+									<p class="fragment" style="margin: 0;">Two sides reach equilibrium.</p>
+								</div>
+								
+								<!-- Arrow 2 with explanation below -->
+								<div style="display: flex; flex-direction: column; align-items: center; flex-shrink: 0; min-width: 180px;">
+									<div class="fragment" style="font-size: 2em; color: black;">→</div>
+								</div>
+								
+								<!-- Box 3 -->
+								<div class="fragment" style="background: white; color: black; border: 2px solid black; padding: 15px 20px; border-radius: 10px; text-align: center; width: 160px; font-size: 0.65em; flex-shrink: 0;">
+									<p class="fragment" style="margin: 0;">High tech complementarity lead to CVC investing in ventures</p>
+								</div>
+							</div>
+
+
+				</section>
+
+
+		<section>
+			<h2>Example of Nvidia and OmniSci</h2>
+
+			<img src="img/NvidianOmniSci.png" alt="Nvidia and OmniSci">
+
+			<img src="img/NvidiaOmiscicaculation.png" alt="Nvidia and OmniSci calculation">
+		</section>
+
+
+			<section>
+				<h2>Data and sample
+				</h2>
+				<h3>Treatment group</h3>
+				<p class="fragment">CVC investments from VentureXpert (1994-2022, AI as emerging tech)</p>
+<h3>CVC/Venture capabilities in algorithm, computing, and data </h3>
+<p class="fragment">Patent of CVC use trained ML model to classify into these three areas <span style="color: lightgrey;">(USPTO, Toole et al., 2020)</span></p>
+
+				<h3>Final sample of realized CVC investment relationships</h3>
+				<p class="fragment">177 CVC firms, 1,205 AI ventures, and 2,496 deals during 1994-2022</p>
+						<h3>Control group</h3>
+				<p class="fragment">All possible pairs of CVC firms and AI ventures that could have formed CVC relationships in a focal year but did not
+
+
+				</section>
+
+				<section>
+<h2> Deal Distributions</h2>
+<img src="img/Dealdis.svg" alt="Deal Distributions">
+
+				</section>
+
+				<section>
+					<h2> Relative numbers of CVCs and ventures</h2>
+					<img src="img/NewCVCventure.svg" alt="Deal Distributions">
+					
+									</section>
+
+									
+
+				<section>
+					<h3>Dependent variable</h3>
+					<p class="fragment">Dummy=1 if CVC investment realized, 0 otherwise</p>
+					<h3>Independent variable</h3>
+						<p class="fragment">Technological complementarity</p>
+
+						<p class="fragment">Euclidean distance between CVC and venture regarding their capabilities in algorithm, computing and data of AI <span style="color: lightgrey;">(Gower, 1985)</span></p>
+						
+						<p class="fragment">Classify patents into algorithm, computing and data using ML model trained on patent description</p>
+		
+						<h3>Example</h3>
+						<p class="fragment">Learning device and learning method for object detection (Patent ID: 10002290): </p>
+						<p class="fragment">0.98 - developing a new algorithm to detect objects from images. </p>
+
+						<p class="fragment">Coherent LADAR using intra-pixel quadrature detection (Patent ID: 10000000): </p>
+						<p class="fragment">0.01 - laser detection and ranging system. Unrelated to AI algorithm. </p>
+
+				
+					</section>
+
+					<section>
+						<h3>Estimation Model</h3>
+						<p class="fragment">CVC/ventures' AI capability in each dimension = average score for all patents of a firm up to focal year</p>
+						<p class="fragment" style="font-size:0.5em;">
+							$$\text{Tech.Complementarity}(CVC,Venture) = \sqrt{\sum_{j \in \{algorithm, computing, data\}} (CVC_j-Venture_j)^2}$$
+							</p>
+
+						</section>
+	
+		
+<section>
+	<h2>Illustration of technological complementarity and CVC investment</h2>
+<img src="img/NvidiaOmiscicaculation.png" alt="Venn Diagram">
+</section>
+
+
+<section style="font-size:0.8em;">
+	<h2>Control Variables</h2>
+
+	<p class="fragment">Asset complementarity : CVC manufacturing and marketing assets based on data for public CVC firms <span style="color: lightgrey;">(Alvarez-Garrido and Dushnitsky, 2016)</span></p>
+	
+	<p class="fragment">Technology overlap: # patents in same USPTO patent class between CVC and ventures, logged</p>
+	
+	<p class="fragment">Misappropriation hazards:  # inventors moving out of a venture in last 10 years <span style="color: lightgrey;">(Hoisl, 2007; Melero, Palomeras, and Wehrheim, 2020)</span> </p>
+	
+	<p class="fragment">Venture survival and growth: Venture stage; Venture age; Venture patents</p>
+	
+	<p class="fragment">CVC firms: Syndicate size; experience; patents; capital under management</p>
+	
+	<p class="fragment">CVC peak (2020-2022)</p>
+	
+	
+</section>
+
+<section>
+	<h2>Results</h2>
+	<p>Tech. complementarity: mean→ mean+1sd</p>
+	<p>Increase in average probability of CVC from mean = 5.5% ↑</p>
+
+</section>
+<section>
+	<h2>Component uncertainty moderator</h2>
+	 30% ↑
+<img src="img/Component.svg" alt="Deal Distributions">
+
+</section>
+
+<section>
+
+	<h1>More analyses to confirm the mechanism</h1>
+	</section>
+		<!-- Condition Competitive Congestion -->
+
+						<section>
+				<h2>Incomplete competition
+
+				</h2>
+					<p class="fragment"> Definition:The intensity of competition among agents on one side of a two-sided market for access to a limited pool of counterparties.</p>
+						<p class="fragment fade-in">limited availability of comparable ventures or high bidding costs<span style="color: lightgrey;"> (Hochberg, Ljungqvist, and Lu, 2007)</span></p>
+						<p class="fragment fade-in">CVC and ventures settle for "second best"</p>
+
+						<p class="fragment fade-in">When competition is more incomplete, the technological complementarity between CVCs and ventures are less likley to influence the probablity of CVC investment.</p>
+				</section>
+
+
+<section>
+	<h2>Moderator: Incomplete competition</h2>
+
+	<p>=  |(# CVC firm's competitors yet to invest in AI) - (# CVC firm's competitors having invested in the focal year)| </p>
+	<h3>Competitors</h3>
+	<p>3-digit SIC code <span style="color: lightgrey;">(Haveman and Nonnemaker, 2000; Kapoor and Furr, 2015)</span></p>
+	
+
+</section>
+
+<section>
+	<h2>Incomplete competition</h2>
+	51.5%↓ 
+
+<img src="img/competition.png" alt="Deal Distributions">
+
+</section>
+
+
+		<!-- Supplement Component-->
+
+<section>
+<h2>Two-sided Matching Method</h2>
+
+<p class="fragment">1. Decompose the measure of complementarity to interactions among different components and assets</p>
+
+<p class="fragment">2. Consider both CVCs' and ventures' choices</p>
+
+<p class="fragment">3. Two-sided Matching Method </p>
+
+</section>
+<section>
+	<h2>Two-sided Matching Method Formula</h2>
+
+	$$
+\begin{align}
+\text{Selection equations:} \quad 
+& D_i^{(1)} = \mathbf{1}\{ Z_i^{(1)} \gamma_1 + u_i^{(1)} \geq 0 \}, \\
+& D_i^{(2)} = \mathbf{1}\{ Z_i^{(2)} \gamma_2 + u_i^{(2)} \geq 0 \}, \\[6pt]
+\text{Outcome equation:} \quad 
+& Y_i = X_i \beta + \varepsilon_i, \\[6pt]
+\text{Observed outcome:} \quad
+& Y_i^{\text{obs}} = Y_i \cdot D_i^{(1)} \cdot D_i^{(2)} .
+\end{align}
+$$
+</section>
+
+<section>
+	<h2>Two-sided Matching Method Results</h2>
+<div class="r-stack" style="transform: scale(0.4); transform-origin: left top;">
+$$
+\begin{array}{lrrrrrrr}
+\hline
+Variables &Point Est. &Std Error &CI Lower &CI Upper &p-value &Effects \\
+\hline
+Technology overlap & & & & & & \\
+CVC algorithm * venture algorithm &-1.668 &2.421 &-2.504 &-0.564 &0.357 &-0.071 \\
+CVC compute * venture compute &-1.918 &4.724 &-2.895 &-0.567 &0.659 &-0.278 \\
+CVC data * venture data &-1.92 &2.264 &-2.895 &-0.607 &0.141 &-0.051 \\
+Technological Complementarity & & & & & & \\
+\textbf{CVC compute * venture algorithm} &\textbf{4.012} &\textbf{4.244} &\textbf{1.651} &\textbf{6.143} &\textbf{0.022} &\textbf{0.252} \\
+\textbf{CVC data * venture algorithm} &\textbf{3.893} &\textbf{4.181} &\textbf{1.594} &\textbf{5.899} &\textbf{0.035} &\textbf{0.134} \\
+CVC algorithm * venture compute &3.909 &4.476 &1.604 &5.987 &0.105 &0.381 \\
+CVC data * venture compute &3.987 &4.404 &1.64 &5.938 &0.064 &0.316 \\
+\textbf{CVC algorithm * venture data} &\textbf{3.972} &\textbf{3.876} &\textbf{1.628} &\textbf{6.102} &\textbf{0} &\textbf{0.129} \\
+\textbf{CVC compute * venture data} &\textbf{3.893} &\textbf{3.764} &\textbf{1.603} &\textbf{5.978} &\textbf{0} &\textbf{0.188} \\
+Asset Complementarity & & & & & & \\
+CVC marketing * venture algorithm &3.875 &4.248 &1.589 &5.946 &0.055 &1.48e-5 \\
+\textbf{CVC marketing * venture compute} &\textbf{3.987} &\textbf{4.084} &\textbf{1.641} &\textbf{6.108} &\textbf{0.004} &\textbf{2.95e-5} \\
+\textbf{CVC marketing * venture data} &\textbf{3.916} &\textbf{3.946} &\textbf{1.609} &\textbf{5.943} &\textbf{0.001} &\textbf{1.19e-5} \\
+\textbf{CVC manufacturing * venture algorithm} &\textbf{3.956} &\textbf{3.911} &\textbf{1.625} &\textbf{6.042} &\textbf{0} &\textbf{8.74e-5} \\
+\textbf{CVC manufacturing * venture compute} &\textbf{3.937} &\textbf{4.263} &\textbf{1.618} &\textbf{5.9} &\textbf{0.042} &\textbf{7.91e-5} \\
+\textbf{CVC manufacturing * venture data} &\textbf{3.878} &\textbf{3.885} &\textbf{1.588} &\textbf{5.907} &\textbf{0} &\textbf{7.52e-5} \\
+\hline
+\end{array}
+$$
+</div>
+</section>
+
+
+			<!-- Supplement Compare-->
+
+
+<section>
+<h2>Post-sorting: More joint innovation</h2>
+
+<p>OLS regression of the log of the depth (# patents) and scope (# patent categories) of co-filed AI patents 5 years after CVC investment
+</p>
+<p style="font-size: 0.5em;">
+$$
+\begin{array}{lrrr}
+\hline
+&Depth &Scope \\
+\hline
+ &Coeff. (p-value) &Coeff. (p-value) \\
+ Tech. complementarity&0.307 (0.000) &0.173 (0.003) \\
+\hline
+\end{array}
+$$
+</p>
+</section>
+
+				<!-- Robustness Checks -->
+				<section>
+					<h2>Robustness Checks</h2>
+					<p class="fragment">• Different model specifications</p>
+					<p class="fragment">• Vary threshold of AI patents and classifications into data, algorithm, and computing power</p>
+					<p class="fragment">• Excluding the firms that apply AI for their current businesses rather than developing AI technologies</p>
+				</section>
+
+
+				<!-- Theoretical Contributions -->
+				<section>
+					<h2>Conclusion</h2>
+					
+					<h3 class="fragment">What?</h3>
+					<p class="fragment"><strong>Distinguish technological complementarity from asset complementarity:</strong> </p>
+					<p class="fragment">• Prior work: Asset complementarity → anticipated value capture → investment</p>
+					<p class="fragment">• This study: Tech complementarity → sorting mechanism → investment</p>
+
+					<h3 class="fragment">So What?</h3>
+					<p class="fragment">• As more and more technology systems emerge (such as EVs, AI), Sorting mechanism reveal a closer description on how CVCs and ventures make decisions simultaneously when value capture is highly uncertain.</p>
+					<p class="fragment">• Reveal relative advantages of ventures in sorting: algorithm and data</p>
+					<p class="fragment">• Policy implications: reducing competitive congestion through policy intervention can help efficient allocation.</p>
+				</section>
+
+
+
+
+</div>
+</div>
+
+		<!-- MathJax Configuration -->
+		<script>
+			window.MathJax = {
+				tex: {
+					inlineMath: [['$', '$'], ['\\(', '\\)']],
+					displayMath: [['$$', '$$'], ['\\[', '\\]']],
+					processEscapes: true,
+					processEnvironments: true
+				},
+				options: {
+					skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+				}
+			};
+		</script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/math/math.js"></script>
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+		<script>
+			Reveal.initialize({
+				hash: true,
+				slideNumber: true,
+				math: {
+					mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+			});
+
+			// Interactive Venn Diagram functionality
+			document.addEventListener('DOMContentLoaded', function() {
+				const infoBox = document.getElementById('research-info-box');
+				const infoTitle = document.getElementById('info-title');
+				const infoContent = document.getElementById('info-content');
+				const vennElements = document.querySelectorAll('.venn-circle, .intersection-area');
+				
+				// Research content data
+				const researchData = {
+					'entrepreneur': {
+						title: 'Resource-based view of the firm',
+						questions: [
+						'Data breach regulations: Bottleneck targeting or circumventing strategies for firms investing in AI (Submitted for AMJ)'
+						]
+					},
+					'tech': {
+						title: 'Social Construction of Technologies',
+						questions: [
+						'Straddling employees and commercialization plan of drone ventures (Submitted for OS)',
+						]
+					},
+					'stakeholder': {
+						title: 'Stakeholder/Mobilization Theory',
+						questions: [
+						'Shareholder activism and employee data leaks (conditionally accepted at Strategic Science)',
+						'Preemption regulations influence stakeholder engagement of drone ventures (working paper for Research Policy)',
+						]
+					},
+					'tech-ventures': {
+						title: 'New ventures and CVCs',
+						questions: [
+							'Tech. Complementarity and CVC investment in AI (R&R at SMJ)',
+							'Tech. Complementarity and Acquisition versus CVC in AI (working paper for SMJ)',
+						]
+					},
+					'platform-ecosystems': {
+						title: 'Venture shaping regulations',
+						questions: [
+							'Risk-bearing stakeholder anchoring and effectiveness of venture lobbying for drone regulations (Under review at OS)',
+							'Local political power and commercialization of Buddhist temples (Published at ASQ)',
+							'AI policy-making at state level (Published at Business and Politics)',
+							'AI policy in higher education (Published at Public Integrity)'
+						]
+					},
+					'social-enterprise': {
+						title: 'Political/Cultural resources of ventures',
+						questions: [
+							'Organizational structure and scaling of missionary hospitals in 1800-1949 of China (Prepared for OS)',
+							'Womens March, Governance uncertainty and Investment in new ventures (Prepared for SMJ)',
+							'Platform polarized design and user engagement (R&R at ASQ)'
+						]
+					},
+					'research-focus': {
+						title: 'My Research Focus',
+						questions: [
+							'Enactive agency of technologies and competitive advantages (Submitted for Journal of Innovation & Knowledge)',
+							'Data breaches on firms collaboration for AI technologies (Working paper for Organization Science)'
+						]
+					}
+				};
+				
+				// Info box functionality
+				const defaultMessage = document.querySelector('.default-message');
+				
+				vennElements.forEach(element => {
+					element.addEventListener('mouseenter', function(e) {
+						const area = this.getAttribute('data-area');
+						const data = researchData[area];
+						
+						if (data) {
+							infoTitle.textContent = data.title;
+							infoContent.innerHTML = '';
+							
+							data.questions.forEach(question => {
+								const li = document.createElement('li');
+								li.textContent = question;
+								infoContent.appendChild(li);
+							});
+							
+							// Show content, hide default message
+							defaultMessage.style.display = 'none';
+							infoContent.style.display = 'block';
+							infoBox.classList.add('visible');
+						}
+					});
+					
+					element.addEventListener('mouseleave', function() {
+						// Hide content, show default message
+						infoContent.style.display = 'none';
+						defaultMessage.style.display = 'block';
+						infoTitle.textContent = 'Research Area';
+						infoBox.classList.remove('visible');
+					});
+				});
+				
+				// Add click functionality for mobile devices
+				vennElements.forEach(element => {
+					element.addEventListener('click', function(e) {
+						e.preventDefault();
+						const area = this.getAttribute('data-area');
+						const data = researchData[area];
+						
+						if (data) {
+							let alertText = data.title + ':\n\n';
+							data.questions.forEach((question, index) => {
+								alertText += (index + 1) + '. ' + question + '\n';
+							});
+							alert(alertText);
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
