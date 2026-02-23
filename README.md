@@ -49,9 +49,11 @@ Reporting Response Rate: [Endsemester SEEQ](https://www.srte.psu.edu/)
 
 *   **[Simulation](https://bcs.statherian.com)**
 
+<!-- 
 ## Job Talk
 
-*   **[Teaching Demo](./JobTalk/TeachingPresentation.html)**
+*   **[Teaching Demo](./JobTalk/Teaching_IB.html)**
 *   **[Research Demo](./JobTalk/CVC_Invest.html)**
 *   **[MaterialDownload](./JobTalk/MaterialDownload/EntryTimingSimulation.docx)**
 
+-- !>

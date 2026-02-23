@@ -377,6 +377,94 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
+
+				<!-- PART 2: RESEARCH PRESENTATION -->
+				<section>
+					<h1>Research Presentation</h1>
+					<h2>Technology, Strategy, and Stakeholder Dynamics</h2>
+				</section>
+
+				<section>
+					<h2>Research Agenda: Managing Uncertainty for New Ventures</h2>
+					<p>How do entrepreneurs improve performance by managing different types of uncertainty?</p>
+
+					<!-- Interactive Diagram Layout -->
+					<div class="diagram-container" style="margin-top: 20px;">
+						<!-- Left Side: Venn Diagram -->
+						<div class="venn-diagram-wrapper">
+							<svg width="700" height="500" viewBox="0 0 500 350" id="venn-diagram">
+								<!-- Define gradients for better visual appeal -->
+								<defs>
+									<radialGradient id="entrepreneurGrad" cx="50%" cy="50%" r="50%">
+										<stop offset="0%" style="stop-color:rgba(255, 255, 255, 0.4);stop-opacity:1" />
+										<stop offset="50%" style="stop-color:rgba(255, 255, 255, 0.4);stop-opacity:1" />
+									</radialGradient>
+									<radialGradient id="techGrad" cx="50%" cy="50%" r="50%">
+										<stop offset="0%" style="stop-color:rgba(255, 255, 255, 0.4);stop-opacity:1" />
+										<stop offset="50%" style="stop-color:rgba(255, 255, 255, 0.4);stop-opacity:1" />
+									</radialGradient>
+									<radialGradient id="stakeholderGrad" cx="50%" cy="50%" r="50%">
+										<stop offset="0%" style="stop-color:rgba(255, 255, 255, 0.4);stop-opacity:1" />
+										<stop offset="50%" style="stop-color:rgba(255, 255, 255, 0.2);stop-opacity:1" />
+									</radialGradient>
+								</defs>
+								
+								<!-- Circle 1: Entrepreneurship -->
+								<circle id="circle-entrepreneur" class="venn-circle" cx="150" cy="120" r="90" 
+									fill="url(#entrepreneurGrad)" stroke="#6c757d" stroke-width="2"
+									data-area="entrepreneur"/>
+								
+								<!-- Circle 2: Technology Innovation -->
+								<circle id="circle-tech" class="venn-circle" cx="320" cy="120" r="90" 
+									fill="url(#techGrad)" stroke="#6c757d" stroke-width="2"
+									data-area="tech"/>
+								
+								<!-- Circle 3: Stakeholder Theory -->
+								<circle id="circle-stakeholder" class="venn-circle" cx="235" cy="230" r="90" 
+									fill="url(#stakeholderGrad)" stroke="#6c757d" stroke-width="2"
+									data-area="stakeholder"/>
+								
+								<!-- Invisible intersection areas for better interactivity -->
+								<ellipse class="intersection-area" cx="235" cy="100" rx="30" ry="25" 
+									data-area="tech-ventures"/>
+								<ellipse class="intersection-area" cx="300" cy="180" rx="30" ry="25" 
+									data-area="platform-ecosystems"/>
+								<ellipse class="intersection-area" cx="170" cy="180" rx="30" ry="25" 
+									data-area="social-enterprise"/>
+								<ellipse class="intersection-area" cx="235" cy="150" rx="25" ry="20" 
+									data-area="research-focus"/>
+								
+								<!-- Main Circle Labels -->
+								<text x="100" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#6c757d" class="venn-text">
+									<tspan x="100" dy="0">Tech Uncertainty</tspan>
+								</text>
+								
+								<text x="370" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#6c757d" class="venn-text">
+									<tspan x="370" dy="0">Regulation Uncertainty</tspan>
+								</text>
+								
+								<text x="235" y="300" text-anchor="middle" font-size="12" font-weight="bold" fill="#6c757d" class="venn-text">
+									<tspan x="235" dy="0">Category Uncertainty</tspan>
+								</text>
+								
+							</svg>
+						</div>
+						
+						<!-- Right Side: Research Info Box -->
+						<div id="research-info-box" class="research-info-box">
+							<h4 id="info-title">Research Area</h4>
+							<div class="default-message">
+								<p class="fragment">Hover to explore research questions</p>
+							</div>
+							<ul id="info-content" style="display: none;font-size:0.5em;">
+							</ul>
+						</div>
+					</div>
+				</section>
+
+
+
 				<!-- Title page -->
 				<section>
 					<h2>Technological Complementarity and CVC Investment: The case of Artificial Intelligence</h2>
