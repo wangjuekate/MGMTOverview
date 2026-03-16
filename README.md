@@ -21,7 +21,7 @@ This repository contains slide decks for MGMT 457 W: Strategic Management of Inn
 
 
 Reporting Response Rate:[Midsemester SEEQ](https://www.srte.psu.edu/)
-*   **[Midterm Review](./slides_midtermreview/Mid_termreview.html)**
+*   **[Midterm Review](./slides_midtermreview/Mid_termreview_2026.html)**
 
 
 *   **[Competition Analyses](./slides_competitionanalyses/CompetitionAnalyses.html)**
@@ -54,5 +54,5 @@ Reporting Response Rate: [Endsemester SEEQ](https://www.srte.psu.edu/)
 
 *   **[Teaching Demo](./JobTalk/Teaching_IB.html)**
 *   **[Research Demo](./JobTalk/CVC_Invest.html)**
-*   **[MaterialDownload](./JobTalk/MaterialDownload/EntryTimingSimulation.docx)**
+*   **[MaterialDownload](./JobTalk/MaterialDownload/SimulationCollaboration.docx)**
 
